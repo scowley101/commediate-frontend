@@ -10,14 +10,12 @@ import SEO from './SEO';
 export default function Layout({ children }) {
         return (
                 <div>
-                        {/* <SEO />
+                        {/* <SEO /> */}
                         <GlobalStyles />
                         <Typography />
                         <Nav />
                         {children}
-                        <Footer /> */}
-
-                        {children}
+                        <Footer />
                 </div>
         );
 }

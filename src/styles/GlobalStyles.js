@@ -2,27 +2,12 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --lightGrey: #F0EAE9;
-    --black: #2E2D2C;
-    --orange: #E65D0E;
-    --danger: #ED1C24;
-    --darkRed: #943A2E;
-    --lightOrange: rgba(230, 93, 14, 0.87);
-    --hoverOrange: rgba(230, 93, 14, 0.75);
-    --darkOrange: #B2480B;
-    --darkBlack: #222120;
-    --lightBlack: rgba(46, 45, 44, 0.9);
-    --disabled: #C1BBBA;
-    --mbBeige: #ac906a;
-    --mbPink: #E51387;
-    --mbLightPink: #E513A8;
-    --mbOrange: #F0AC24;
-    --mbLightOrange: #F0BE5B;
-    --mbRed: #832F22;
-    --mbLightRed: #974A3E;
-    --mbGoldBeige: #B29E68;
-    --mbYellow: #EFA324;
-    --mbWhite: white;
+    --cmGrey: #F0F1F5;
+    --cmBlue: #1F3151;
+    --cmOrange: #FC9E4F;
+    --cmLightOrange: rgba(252, 158, 79, 0.5);
+--cmWhite: #ffffff;
+    
    
   }
   html {
@@ -31,30 +16,21 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center; */
     max-width: 1300px;
     margin: 0 auto;
-    font-size: 9px;
-    background-color: var(--mbWhite);
+    font-size: 8px;
+    background-color: var(--cmWhite);
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
-    @media (max-width: 1030px) {
-                                font-size: 8px;
-                                margin: 0 4rem;
-
-                        }
-                        @media (max-width: 800px) {
-                                margin: 0 2rem;
-
-                        }               
-  }
+    
 
   body {
 margin: 0 4rem;
     font-size: 2rem;
   }
 
-  fieldset {
+  /* fieldset {
     border-color: rgba(0,0,0,0.1);
     border-width: 1px;
-  }
+  } */
 
   /* button {
     background: var(--orange);
@@ -83,15 +59,15 @@ margin: 0 4rem;
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--mbGoldBeige) var(--mbWhite);
+    scrollbar-color: var(--mbOrange) var(--cmWhite);
   }
   body::-webkit-scrollbar-track {
-    background: var(--mbWhite);
+    background: var(--cmWhite);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--mbPink) ;
+    background-color: var(--mbOrange) ;
     border-radius: 6px;
-    border: 3px solid var(--mbWhite);
+    border: 3px solid var(--cmWhite);
   }
 
 

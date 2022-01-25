@@ -2,17 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const Typography = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
-  /* @font-face {
-    font-family: "AtlasTypewriter";
-    src: url(${AtlasTypewriterThin});
-  }
-
-  @font-face {
-    font-family: "NoeDisplay";
-    src: url(${NoeDisplayMedium});
-  } */
 
  
 
@@ -22,7 +12,7 @@ const Typography = createGlobalStyle`
   
 // ToDo - Find most appropriate backup fonts
   html {
-    font-family: "Gill Sans Light", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--black);
 line-height: 3.444rem;
   }
@@ -33,7 +23,7 @@ line-height: 3.444rem;
 
   }
   h1,h2,h3,h4,h5,h6 {
-    font-family: "Amatic SC", "Courier New", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: DM Sans, "Courier New", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 700;
     margin: 0;
     line-height: 125%;
@@ -70,23 +60,15 @@ line-height: 3.444rem;
     font-size: 1.6rem;
   }
 
-  h2, .amatic {
-    font-family: "Amatic SC", 'Courier New', Courier, monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 700;
-  }
-
-  .smallBody {
-    font-size: 1.6rem;
-  }
-
+  
   a {
-    color: var(--black);
+
     text-decoration: none;
     /* text-decoration-color: var(--orange); */
     /* Chrome renders this weird with this font, so we turn it off */
     text-decoration-skip-ink: none;
     :hover {
-      color: var(--mbPink);
+      color: var(--cmOrange);
 
     }
   }

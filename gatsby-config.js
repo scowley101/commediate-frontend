@@ -19,7 +19,13 @@ export default {
                                 token: process.env.SANITY_TOKEN,
                         },
                 },
-
+                {
+                        resolve: `gatsby-plugin-google-fonts`,
+                        options: {
+                                fonts: [`DM Sans\:400,400i,500,500i,700,700i`],
+                                display: 'swap',
+                        },
+                },
                 'gatsby-plugin-styled-components',
                 'gatsby-plugin-react-helmet',
                 'gatsby-plugin-image',
