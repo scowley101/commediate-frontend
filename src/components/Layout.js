@@ -1,25 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Nav from './Nav';
+import Header from './header';
 import Footer from './Footer';
-import 'normalize.css';
-import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
-import SEO from './SEO';
 
-export default function Layout({ children }) {
+function Layout(props) {
+        const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = props;
+
         return (
-                <div>
-                        {/* <SEO /> */}
-                        <GlobalStyles />
-                        <Typography />
-                        <Nav />
-                        {children}
-                        <Footer />
-                </div>
+                <>
+                        <Header
+                                navMenuItems={navMenuItems}
+                                siteTitle={siteTitle}
+                                onHideNav={onHideNav}
+                                onShowNav={onShowNav}
+                                showNav={showNav}
+                        />
+                        <>{children}</>
+                        <Footer siteTitle={siteTitle} />
+                </>
         );
 }
 
-Layout.propTypes = {
-        children: PropTypes.node,
-};
+export default Layout;

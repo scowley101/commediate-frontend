@@ -1,7 +1,12 @@
+import { Link } from 'gatsby';
 import React from 'react';
-import styled from 'styled-components';
-import { Link, graphql, StaticQuery } from 'gatsby';
 
-export default function Footer() {
-        return <p>Footer</p>;
+function Footer() {
+        return (
+                <footer>
+                        <h4>A footer</h4>
+                </footer>
+        );
 }
+
+export default Footer;
