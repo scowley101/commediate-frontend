@@ -1,14 +1,26 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import styled from 'styled-components';
 import CTALink from './CTALink';
 
+const HeaderStyles = styled.nav`
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+        background-color: var(--cmBlue);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4.13rem;
+        z-index: 100;
+`;
+
 const Header = ({ showNav, siteTitle, navMenuItems = [] }) => (
-        <nav id="header">
+        <HeaderStyles>
                 <div>
                         <div>
-                                <Link id="siteTitle" to="/">
-                                        {siteTitle}
-                                </Link>
+                                <Link to="/">{siteTitle}</Link>
                         </div>
 
                         {showNav && navMenuItems && (
@@ -25,7 +37,7 @@ const Header = ({ showNav, siteTitle, navMenuItems = [] }) => (
                 </div>
 
                 <hr />
-        </nav>
+        </HeaderStyles>
 );
 
 export default Header;

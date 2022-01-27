@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import GlobalStyles from '../styles/GlobalStyles';
+import Typography from '../styles/Typography';
 
 function Layout(props) {
         const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = props;
@@ -16,6 +18,8 @@ function Layout(props) {
                         />
                         <>{children}</>
                         <Footer siteTitle={siteTitle} />
+                        <GlobalStyles />
+                        <Typography />
                 </>
         );
 }
