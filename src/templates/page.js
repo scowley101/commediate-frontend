@@ -3,14 +3,7 @@ import { graphql } from 'gatsby';
 import GraphQLErrorList from '../components/graphql-error-list';
 import Layout from '../containers/layout';
 import SEO from '../components/SEO';
-import hero from '../components/ContentDisplay/Hero';
-import cvTimeline from '../components/ContentDisplay/CvTimeline';
-import illustrations from '../components/ContentDisplay/Illustrations';
-import oneColumnList from '../components/ContentDisplay/OneColumnList';
-import roleComparison from '../components/ContentDisplay/RoleComparison';
-import testimonials from '../components/ContentDisplay/Testimonials';
-import twoColumnList from '../components/ContentDisplay/TwoColumnList';
-import twoColumnText from '../components/ContentDisplay/TwoColumnText';
+
 import ContentModules from './contentModules';
 
 export const query = graphql`
