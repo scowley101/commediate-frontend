@@ -32,10 +32,10 @@ const ContentModules = ({ c }) => {
                 case 'testimonials':
                         return <Testimonials key={c._key} {...c} />;
 
-                case 'TwoColumnList':
+                case 'twoColumnList':
                         return <TwoColumnList key={c._key} {...c} />;
 
-                case 'TwoColumnText':
+                case 'twoColumnText':
                         return <TwoColumnText key={c._key} {...c} />;
 
                 default:

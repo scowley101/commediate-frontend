@@ -82,8 +82,6 @@ const Page = (props) => {
                         {content.map((c, i) => (
                                 <ContentModules c={c} key={i} />
                         ))}
-
-                        <p>The {props?.data?.route?.page?.title || props?.data?.page?.title || 'mystery'} page</p>
                 </Layout>
         );
 };

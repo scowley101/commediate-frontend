@@ -13,40 +13,40 @@ const doNavigate = (target) => {
         }
 };
 
-function CTALink(props) {
-        const { route, link, landingPageRoute, kind, buttonActionClass, title } = props;
-        let validatedLink = route || link || '#';
-        if (landingPageRoute && landingPageRoute.slug && landingPageRoute.slug.current) {
-                validatedLink = landingPageRoute.slug.current;
+const CTALink = (props) => {
+        let link = props.route || props.link || '#';
+        if (props.landingPageRoute && props.landingPageRoute.slug && props.landingPageRoute.slug.current) {
+                link = props.landingPageRoute.slug.current;
         }
-
-        if (kind === 'button') {
+        console.log(props.link);
+        if (props.kind === 'button') {
                 return (
                         <button
                                 type="button"
                                 id="navAction"
                                 onClick={() => doNavigate(link)}
-                                className={buttonActionClass || ''}
+                                className="button variable"
+                                // className={props.buttonActionClass || ''}
                         >
-                                {title}
+                                {props.title}
                         </button>
                 );
         }
 
         // External
-        if (validatedLink) {
+        if (props.link) {
                 return (
-                        <a href={validatedLink} target="_blank" rel="noopener noreferrer">
-                                {title}
+                        <a href={props.link} className="a variable" target="_blank" rel="noopener noreferrer">
+                                {props.title}
                         </a>
                 );
         }
 
         return (
-                <Link className="mr-3" to={link}>
-                        {title}
+                <Link className="gatsby link variable" to={`/${link}`}>
+                        {props.title}
                 </Link>
         );
-}
+};
 
 export default CTALink;
