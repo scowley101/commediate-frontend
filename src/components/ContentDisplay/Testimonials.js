@@ -4,9 +4,9 @@ import PortableText from '../PortableText';
 function Testimonials({ heading, clientTestimonials }) {
         return (
                 <div>
-                        <h2>
+                        <h4>
                                 <PortableText blocks={heading} />
-                        </h2>
+                        </h4>
                         {clientTestimonials.map((testimonial) => (
                                 <>
                                         <PortableText blocks={testimonial.quote} />

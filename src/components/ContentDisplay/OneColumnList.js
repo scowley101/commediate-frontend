@@ -5,9 +5,9 @@ import CTALink from '../CTALink';
 function OneColumnList({ heading, cta, listItems, tagline }) {
         return (
                 <div>
-                        <h2>
+                        <h3>
                                 <PortableText blocks={heading} />
-                        </h2>
+                        </h3>
                         <p>
                                 <PortableText blocks={heading} />
                         </p>

@@ -5,9 +5,9 @@ import CTALink from '../CTALink';
 function TwoColumnText({ cta, heading, tagline }) {
         return (
                 <div>
-                        <h2>
+                        <h4>
                                 <PortableText blocks={heading} />
-                        </h2>
+                        </h4>
                         <CTALink {...cta} />
                         <p>
                                 <PortableText blocks={tagline} />
