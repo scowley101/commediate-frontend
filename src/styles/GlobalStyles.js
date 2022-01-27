@@ -6,24 +6,25 @@ const GlobalStyles = createGlobalStyle`
     --cmBlue: #1F3151;
     --cmOrange: #FC9E4F;
     --cmLightOrange: rgba(252, 158, 79, 0.5);
---cmWhite: #ffffff;
-    
-   
+    --cmWhite: #ffffff;
+    --sidePadding: 4.32rem;
+    --componentVerticalPadding: 6.063rem;
+   --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   html {
     /* display: flex;
     flex-direction: row;
-    justify-content: center; */
-    max-width: 1300px;
+    justify-content: center; */ 
+    max-width: 2100px;
     margin: 0 auto;
-    font-size: 8px;
+    font-size: 16px;
     background-color: var(--cmWhite);
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
     
 
   body {
-margin: 0 4rem;
+margin: 0;
     font-size: 2rem;
   }
 

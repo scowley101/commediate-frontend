@@ -7,36 +7,44 @@ const HeaderStyles = styled.nav`
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 0;
-        background-color: var(--cmBlue);
+        background-color: var(--cmGrey);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-top: 4.13rem;
+        padding: 2.06rem var(--sidePadding);
         z-index: 100;
+
+        .nav-items-container {
+                ul {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                }
+                li {
+                        display: flex;
+                        margin: 0 1.5rem;
+                }
+        }
 `;
 
 const Header = ({ showNav, siteTitle, navMenuItems = [] }) => (
         <HeaderStyles>
                 <div>
-                        <div>
-                                <Link to="/">{siteTitle}</Link>
-                        </div>
-
-                        {showNav && navMenuItems && (
-                                <div id="nav-content">
-                                        <ul>
-                                                {navMenuItems.map((i) => (
-                                                        <li>
-                                                                <CTALink {...i} />
-                                                        </li>
-                                                ))}
-                                        </ul>
-                                </div>
-                        )}
+                        <Link to="/">{siteTitle}</Link>
                 </div>
 
-                <hr />
+                {showNav && navMenuItems && (
+                        <div className="nav-items-container">
+                                <ul>
+                                        {navMenuItems.map((i) => (
+                                                <li className="text-lg">
+                                                        <CTALink {...i} />
+                                                </li>
+                                        ))}
+                                </ul>
+                        </div>
+                )}
         </HeaderStyles>
 );
 

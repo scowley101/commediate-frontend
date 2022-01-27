@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, navigate } from 'gatsby';
+import styled from 'styled-components';
 
 const doNavigate = (target) => {
         if (!target || !target.length) {
@@ -13,6 +14,29 @@ const doNavigate = (target) => {
         }
 };
 
+const ButtonStyles = styled.button`
+        font-family: var(--dmSans);
+        margin-top: 3.875rem;
+        border-radius: 56px;
+        cursor: pointer;
+        /* transition: background-color 0.1s ease, color 0.1s ease; */
+        transition: all 0.2s;
+        padding: 0.6rem 1.89rem;
+        /* a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+        } */
+        background-color: var(--cmOrange);
+        border: none;
+        :hover {
+                background-color: var(--cmLightOrange);
+        }
+        :active {
+                background-color: var(--mbOrange);
+        }
+`;
+
 const CTALink = (props) => {
         let link = props.route || props.link || '#';
         if (props.landingPageRoute && props.landingPageRoute.slug && props.landingPageRoute.slug.current) {
@@ -21,7 +45,7 @@ const CTALink = (props) => {
         console.log(props.link);
         if (props.kind === 'button') {
                 return (
-                        <button
+                        <ButtonStyles
                                 type="button"
                                 id="navAction"
                                 onClick={() => doNavigate(link)}
@@ -29,7 +53,7 @@ const CTALink = (props) => {
                                 // className={props.buttonActionClass || ''}
                         >
                                 {props.title}
-                        </button>
+                        </ButtonStyles>
                 );
         }
 

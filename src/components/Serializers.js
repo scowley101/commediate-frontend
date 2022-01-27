@@ -14,6 +14,9 @@ const AuthorReference = ({ node }) => {
 
 const serializers = {
         types: {
+                h1: ({ node }) => <h1 className="h1">{node}</h1>,
+                h2: ({ node }) => <h2 className="h2">{node}</h2>,
+                h3: ({ node }) => <h3 className="h3">{node}</h3>,
                 authorReference: AuthorReference,
                 mainImage: ({ node }) => <MainImage mainImage={node} />,
                 videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
