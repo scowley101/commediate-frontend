@@ -77,6 +77,12 @@ const Typography = createGlobalStyle`
     line-height: 1.5rem;
   }
 
+  .text-base-bold {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
   .text-lg {
     font-weight: 400;
     font-size: 1.125rem;

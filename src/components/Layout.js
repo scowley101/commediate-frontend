@@ -17,7 +17,13 @@ function Layout(props) {
                                 showNav={showNav}
                         />
                         <>{children}</>
-                        <Footer siteTitle={siteTitle} />
+                        <Footer
+                                navMenuItems={navMenuItems}
+                                siteTitle={siteTitle}
+                                onHideNav={onHideNav}
+                                onShowNav={onShowNav}
+                                showNav={showNav}
+                        />
                         <GlobalStyles />
                         <Typography />
                 </>

@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     --cmWhite: #ffffff;
     --sidePadding: 4.32rem;
     --componentVerticalPadding: 6.063rem;
+    --componentPadding: var(--componentVerticalPadding) var(--sidePadding) ;
    --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   html {

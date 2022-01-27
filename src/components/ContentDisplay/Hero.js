@@ -12,6 +12,7 @@ const HeroStyles = styled.div`
         padding: var(--componentVerticalPadding) var(--sidePadding);
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
         background-color: var(--cmGrey);
 
         .text-container {
