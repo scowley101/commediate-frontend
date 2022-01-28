@@ -9,11 +9,19 @@ import PortableText from '../PortableText';
 import CTALink from '../CTALink';
 
 const HeroStyles = styled.div`
-        padding: var(--componentVerticalPadding) var(--sidePadding);
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
+        padding: var(--verticalPadding) var(--sidePadding);
+
         background-color: var(--cmGrey);
+
+        .imageful-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 2rem;
+        }
+        .imageless-container {
+                display: flex;
+                flex-direction: row;
+        }
 
         .text-container {
                 display: flex;
@@ -28,6 +36,8 @@ const HeroStyles = styled.div`
                 h2 {
                         margin-top: 1.625rem;
                         margin-bottom: 0;
+                }
+                .text-image {
                 }
         }
 
@@ -51,14 +61,16 @@ function Hero({ cta, heading, illustration, tagline, label }) {
         const img = maybeImage(illustration);
         return (
                 <HeroStyles>
-                        <div className="text-container">
-                                <h4>{label}</h4>
-                                <PortableText className="h2" blocks={heading} />
+                        <div className={!illustration ? 'imageless-container' : 'imageful-container'}>
+                                <div className="text-container">
+                                        <h4>{label}</h4>
+                                        <PortableText className="h2" blocks={heading} />
 
-                                {tagline ? <PortableText blocks={tagline} /> : ''}
-                                <CTALink className="hero-cta" {...cta} />
+                                        {tagline ? <PortableText blocks={tagline} /> : ''}
+                                        <CTALink className="hero-cta" {...cta} />
+                                </div>
+                                {illustration ? <div className="image-container">{img}</div> : ''}
                         </div>
-                        <div className="image-container">{img}</div>
                 </HeroStyles>
         );
 }

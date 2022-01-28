@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import CTALink from './CTALink';
 
 const FooterStyles = styled.nav`
-        padding: var(--componentVerticalPadding) var(--sidePadding) 0 var(--sidePadding);
+        padding: var(--verticalPadding) var(--sidePadding) 0 var(--sidePadding);
         background-color: var(--cmGrey);
         display: flex;
         flex-direction: column;

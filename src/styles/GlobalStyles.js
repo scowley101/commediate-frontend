@@ -8,8 +8,9 @@ const GlobalStyles = createGlobalStyle`
     --cmLightOrange: rgba(252, 158, 79, 0.5);
     --cmWhite: #ffffff;
     --sidePadding: 4.32rem;
-    --componentVerticalPadding: 6.063rem;
-    --componentPadding: var(--componentVerticalPadding) var(--sidePadding) ;
+    --doubleSidePadding: 16.438rem;
+    --verticalPadding: 6.063rem;
+    --componentPadding: var(--verticalPadding) var(--sidePadding) ;
    --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   html {
