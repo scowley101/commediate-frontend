@@ -19,11 +19,13 @@ const OneColumnTextStyles = styled.div`
 function OneColumnText({ cta, heading, tagline }) {
         return (
                 <OneColumnTextStyles>
-                        <PortableText blocks={heading} />
+                        <div data-sal="fade">
+                                <PortableText blocks={heading} />
 
-                        <PortableText blocks={tagline} />
+                                <PortableText blocks={tagline} />
 
-                        <CTALink {...cta} />
+                                <CTALink {...cta} />
+                        </div>
                 </OneColumnTextStyles>
         );
 }

@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import Headroom from 'react-headroom';
 import CTALink from './CTALink';
 
 const HeaderStyles = styled.nav`
@@ -8,12 +9,18 @@ const HeaderStyles = styled.nav`
         position: sticky;
         top: 0;
         background-color: var(--cmGrey);
+        opacity: 95%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 2.06rem var(--sidePadding);
+        padding: 1rem var(--sidePadding);
         z-index: 100;
+        transition: all 0.2s;
+
+        :hover {
+                opacity: 100%;
+        }
 
         .nav-items-container {
                 ul {
@@ -29,23 +36,25 @@ const HeaderStyles = styled.nav`
 `;
 
 const Header = ({ showNav, siteTitle, navMenuItems = [] }) => (
-        <HeaderStyles>
-                <div>
-                        <Link to="/">{siteTitle}</Link>
-                </div>
-
-                {showNav && navMenuItems && (
-                        <div className="nav-items-container">
-                                <ul>
-                                        {navMenuItems.map((i) => (
-                                                <li className="text-lg">
-                                                        <CTALink {...i} />
-                                                </li>
-                                        ))}
-                                </ul>
+        <Headroom>
+                <HeaderStyles>
+                        <div>
+                                <Link to="/">{siteTitle}</Link>
                         </div>
-                )}
-        </HeaderStyles>
+
+                        {showNav && navMenuItems && (
+                                <div className="nav-items-container">
+                                        <ul>
+                                                {navMenuItems.map((i) => (
+                                                        <li className="text-lg">
+                                                                <CTALink {...i} />
+                                                        </li>
+                                                ))}
+                                        </ul>
+                                </div>
+                        )}
+                </HeaderStyles>
+        </Headroom>
 );
 
 export default Header;

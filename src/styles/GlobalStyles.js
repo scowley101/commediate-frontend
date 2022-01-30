@@ -78,6 +78,11 @@ margin: 0;
     max-width: 100%;
   }
 
+  .orange-underline {
+    border-bottom: 5px solid var(--cmLightOrange);
+    
+  }
+
 `;
 
 export default GlobalStyles;

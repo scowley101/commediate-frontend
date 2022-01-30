@@ -1,34 +1,49 @@
 import React from 'react';
+import styled from 'styled-components';
 import PortableText from '../PortableText';
+
+const JobStyles = styled.div`
+        padding: 0;
+        h6,
+        p {
+                margin: 0;
+        }
+        ul {
+                margin-top: 1.5rem;
+                margin-bottom: 0;
+        }
+`;
+
+const CvTimelineStyles = styled.div`
+        padding: var(--componentPadding);
+`;
 
 function Job({ job: { company, jobRoleList, roleSummaryList, years } }) {
         console.log(jobRoleList);
         return (
-                <>
-                        <h5>
+                <JobStyles>
+                        <div className="data-sal">
                                 <PortableText blocks={years} />
-                        </h5>
-
-                        <h5>
                                 <PortableText blocks={company} />
-                        </h5>
-                        {jobRoleList?.map((item) => (
-                                <p>
+                                {jobRoleList?.map((item) => (
                                         <PortableText blocks={item.text} />
-                                </p>
-                        ))}
-
-                        {roleSummaryList?.map((item) => (
-                                <p>
+                                ))}
+                                {roleSummaryList?.map((item) => (
                                         <PortableText blocks={item.text} />
-                                </p>
-                        ))}
-                </>
+                                ))}
+                        </div>
+                </JobStyles>
         );
 }
 
 function CvTimeline({ cvItems }) {
-        return cvItems.map((job) => <Job job={job} />);
+        return (
+                <CvTimelineStyles>
+                        {cvItems.map((job) => (
+                                <Job job={job} />
+                        ))}
+                </CvTimelineStyles>
+        );
 }
 
 export default CvTimeline;

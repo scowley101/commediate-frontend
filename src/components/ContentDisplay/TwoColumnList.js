@@ -33,15 +33,19 @@ const TwoColumnListStyles = styled.div`
 function TwoColumnList({ heading, cta, listItems, tagline }) {
         return (
                 <TwoColumnListStyles>
-                        <div className="left-container">
+                        <div className="left-container" data-sal="fade">
                                 {heading ? <PortableText blocks={heading} /> : ''}
                                 {tagline ? <PortableText blocks={tagline} /> : ''}
                                 {cta ? <CTALink {...cta} /> : ''}
                         </div>
                         <ul className="right-container">
-                                {listItems.map((item) => (
+                                {listItems.map((item, i) => (
                                         <li>
-                                                <PortableText blocks={item.text} />
+                                                <PortableText
+                                                        blocks={item.text}
+                                                        data-sal="fade"
+                                                        data-sal-delay={i * 100}
+                                                />
                                         </li>
                                 ))}
                         </ul>

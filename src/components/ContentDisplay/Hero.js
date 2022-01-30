@@ -9,16 +9,30 @@ import PortableText from '../PortableText';
 import CTALink from '../CTALink';
 
 const HeroStyles = styled.div`
-        padding: var(--verticalPadding) var(--sidePadding);
+        .background-container {
+                background-color: var(--cmGrey);
+                height: 475px;
+                position: static;
+        }
 
-        background-color: var(--cmGrey);
+        .bottom-whitespace {
+                height: 5.5rem;
+        }
+
+        .imageful-container,
+        .imageless-container {
+                padding: var(--verticalPadding) var(--sidePadding);
+        }
 
         .imageful-container {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 2rem;
+                position: absolute;
         }
         .imageless-container {
+                background-color: var(--cmGrey);
+
                 display: flex;
                 flex-direction: row;
         }
@@ -60,7 +74,7 @@ const maybeImage = (illustration) => {
 function Hero({ cta, heading, illustration, tagline, label }) {
         const img = maybeImage(illustration);
         return (
-                <HeroStyles>
+                <HeroStyles data-sal="fade">
                         <div className={!illustration ? 'imageless-container' : 'imageful-container'}>
                                 <div className="text-container">
                                         <h4>{label}</h4>
@@ -71,6 +85,14 @@ function Hero({ cta, heading, illustration, tagline, label }) {
                                 </div>
                                 {illustration ? <div className="image-container">{img}</div> : ''}
                         </div>
+                        {illustration ? (
+                                <>
+                                        <div className="background-container" />
+                                        <div className="bottom-whitespace" />
+                                </>
+                        ) : (
+                                ''
+                        )}
                 </HeroStyles>
         );
 }

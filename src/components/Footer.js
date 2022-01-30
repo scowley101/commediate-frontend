@@ -33,7 +33,7 @@ const FooterStyles = styled.nav`
 const Footer = ({ showNav, siteTitle, navMenuItems = [] }) => (
         <FooterStyles>
                 {showNav && navMenuItems && (
-                        <>
+                        <div data-sal="fade">
                                 <div className="nav-items-container">
                                         <ul>
                                                 {navMenuItems.map((i) => (
@@ -48,7 +48,7 @@ const Footer = ({ showNav, siteTitle, navMenuItems = [] }) => (
                                                 &copy; {siteTitle} {new Date().getFullYear()}
                                         </p>
                                 </div>
-                        </>
+                        </div>
                 )}
         </FooterStyles>
 );

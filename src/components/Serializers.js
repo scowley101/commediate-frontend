@@ -26,6 +26,12 @@ const serializers = {
                 },
                 math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
         },
+        marks: {
+                orangeUnderline: ({ children }) => {
+                        console.log(children);
+                        return <span className="orange-underline">{children}</span>;
+                },
+        },
 };
 
 export default serializers;

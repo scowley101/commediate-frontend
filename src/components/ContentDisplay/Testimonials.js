@@ -34,19 +34,21 @@ const TestimonialsStyles = styled.div`
 function Testimonials({ heading, clientTestimonials }) {
         return (
                 <TestimonialsStyles>
-                        <PortableText blocks={heading} />
-                        <div className="testimonial-container">
-                                {clientTestimonials.map((testimonial) => (
-                                        <div className="individual">
-                                                <PortableText blocks={testimonial.quote} />
-                                                <p className="text-base-bold customer">
-                                                        {testimonial.clientName}
-                                                        {testimonial.clientBusiness
-                                                                ? `, ${testimonial.clientBusiness}`
-                                                                : ''}
-                                                </p>
-                                        </div>
-                                ))}
+                        <div>
+                                <PortableText data-sal="fade" blocks={heading} />
+                                <div className="testimonial-container">
+                                        {clientTestimonials.map((testimonial, i) => (
+                                                <div className="individual" data-sal="fade" data-sal-delay={i * 100}>
+                                                        <PortableText blocks={testimonial.quote} />
+                                                        <p className="text-base-bold customer">
+                                                                {testimonial.clientName}
+                                                                {testimonial.clientBusiness
+                                                                        ? `, ${testimonial.clientBusiness}`
+                                                                        : ''}
+                                                        </p>
+                                                </div>
+                                        ))}
+                                </div>
                         </div>
                 </TestimonialsStyles>
         );

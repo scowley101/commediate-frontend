@@ -34,12 +34,16 @@ const OneColumnListStyles = styled.div`
 function OneColumnList({ heading, cta, listItems, tagline }) {
         return (
                 <OneColumnListStyles>
-                        {heading ? <PortableText blocks={heading} /> : ''}
-                        {tagline ? <PortableText blocks={tagline} /> : ''}
+                        {heading ? <PortableText blocks={heading} data-sal="fade" /> : ''}
+                        {tagline ? <PortableText blocks={tagline} data-sal="fade" /> : ''}
                         <ul>
-                                {listItems.map((item) => (
+                                {listItems.map((item, i) => (
                                         <li>
-                                                <PortableText blocks={item.text} />
+                                                <PortableText
+                                                        blocks={item.text}
+                                                        data-sal="fade"
+                                                        data-sal-delay={i * 100}
+                                                />
                                         </li>
                                 ))}
                         </ul>

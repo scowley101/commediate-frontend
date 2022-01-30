@@ -9,6 +9,10 @@ const TwoColumnTextStyles = styled.div`
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
 
+        .orange-underline {
+                border-bottom: 5px solid var(--cmLightOrange);
+        }
+
         .left-container,
         .right-container {
                 display: flex;
@@ -26,12 +30,12 @@ const TwoColumnTextStyles = styled.div`
 function TwoColumnText({ cta, heading, tagline }) {
         return (
                 <TwoColumnTextStyles>
-                        <div className="left-container">
+                        <div className="left-container" data-sal="fade">
                                 <PortableText blocks={heading} />
 
                                 <CTALink {...cta} />
                         </div>
-                        <div className="right-container">
+                        <div className="right-container" data-sal="fade">
                                 <PortableText blocks={tagline} />
                         </div>
                 </TwoColumnTextStyles>
