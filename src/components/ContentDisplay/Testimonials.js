@@ -41,10 +41,14 @@ function Testimonials({ heading, clientTestimonials }) {
                                                 <div className="individual" data-sal="fade" data-sal-delay={i * 100}>
                                                         <PortableText blocks={testimonial.quote} />
                                                         <p className="text-base-bold customer">
-                                                                {testimonial.clientName}
-                                                                {testimonial.clientBusiness
-                                                                        ? `, ${testimonial.clientBusiness}`
-                                                                        : ''}
+                                                                <span className="orange-underline-container">
+                                                                        <span className="orange-underline-text">
+                                                                                {testimonial.clientName}
+                                                                                {testimonial.clientBusiness
+                                                                                        ? `, ${testimonial.clientBusiness}`
+                                                                                        : ''}
+                                                                        </span>
+                                                                </span>
                                                         </p>
                                                 </div>
                                         ))}

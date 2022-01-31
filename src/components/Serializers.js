@@ -29,7 +29,11 @@ const serializers = {
         marks: {
                 orangeUnderline: ({ children }) => {
                         console.log(children);
-                        return <span className="orange-underline">{children}</span>;
+                        return (
+                                <span className="orange-underline-container">
+                                        <span className="orange-underline-text">{children}</span>
+                                </span>
+                        );
                 },
         },
 };

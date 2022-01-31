@@ -41,13 +41,14 @@ function JobRole({ role: { jobTitle, text } }) {
         return (
                 <JobRoleStyles>
                         <h5>
-                                {jobTitle}
-                                {/* <PortableText blocks={role} /> */}
+                                <span className="orange-underline-container">
+                                        <span className="orange-underline-text">{jobTitle}</span>
+                                </span>
                         </h5>
                         <div className="role-container">
                                 {text.map((i) => (
                                         <div className="role-detail">
-                                                <h6>{i.listHeading}</h6>
+                                                <h6 className="text-base-bold">{i.listHeading}</h6>
                                                 <PortableText blocks={i.text} />
                                         </div>
                                 ))}

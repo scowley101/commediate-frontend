@@ -18,13 +18,18 @@ const CvTimelineStyles = styled.div`
         padding: var(--componentPadding);
 `;
 
-function Job({ job: { company, jobRoleList, roleSummaryList, years } }) {
+function Job({ job: { company, companySubtitle, jobRoleList, roleSummaryList, years } }) {
         console.log(jobRoleList);
         return (
                 <JobStyles>
                         <div className="data-sal">
-                                <PortableText blocks={years} />
-                                <PortableText blocks={company} />
+                                <h6>{years}</h6>
+                                <h6>
+                                        <span className="orange-underline-container">
+                                                <span className="orange-underline-text">{company}</span>
+                                        </span>
+                                </h6>
+                                <h6>{companySubtitle}</h6>
                                 {jobRoleList?.map((item) => (
                                         <PortableText blocks={item.text} />
                                 ))}

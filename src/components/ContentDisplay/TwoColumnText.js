@@ -9,9 +9,9 @@ const TwoColumnTextStyles = styled.div`
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
 
-        .orange-underline {
+        /* .orange-underline {
                 border-bottom: 5px solid var(--cmLightOrange);
-        }
+        } */
 
         .left-container,
         .right-container {

@@ -78,9 +78,16 @@ margin: 0;
     max-width: 100%;
   }
 
-  .orange-underline {
-    border-bottom: 5px solid var(--cmLightOrange);
-    
+  .orange-underline-container {
+    border-bottom: 0.25em solid var(--cmLightOrange);
+    position: relative;
+    bottom: 0.32em;
+  }
+
+  .orange-underline-text {
+    position: relative;
+    top: 0.32em;
+
   }
 
 `;
