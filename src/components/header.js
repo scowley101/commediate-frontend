@@ -36,25 +36,25 @@ const HeaderStyles = styled.nav`
 `;
 
 const Header = ({ showNav, siteTitle, navMenuItems = [] }) => (
-        <Headroom>
-                <HeaderStyles>
-                        <div>
-                                <Link to="/">{siteTitle}</Link>
-                        </div>
+        // <Headroom>
+        <HeaderStyles>
+                <div>
+                        <Link to="/">{siteTitle}</Link>
+                </div>
 
-                        {showNav && navMenuItems && (
-                                <div className="nav-items-container">
-                                        <ul>
-                                                {navMenuItems.map((i) => (
-                                                        <li className="text-lg">
-                                                                <CTALink {...i} />
-                                                        </li>
-                                                ))}
-                                        </ul>
-                                </div>
-                        )}
-                </HeaderStyles>
-        </Headroom>
+                {showNav && navMenuItems && (
+                        <div className="nav-items-container">
+                                <ul>
+                                        {navMenuItems.map((i) => (
+                                                <li className="text-lg">
+                                                        <CTALink {...i} />
+                                                </li>
+                                        ))}
+                                </ul>
+                        </div>
+                )}
+        </HeaderStyles>
+        // </Headroom>
 );
 
 export default Header;
