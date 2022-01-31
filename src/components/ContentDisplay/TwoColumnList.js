@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 import PortableText from '../PortableText';
 import CTALink from '../CTALink';
 
 const TwoColumnListStyles = styled.div`
         padding: var(--componentPadding);
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-gap: 2rem;
+        background-color: var(--cmGrey);
 
         .left-container,
         .right-container {
@@ -28,6 +30,29 @@ const TwoColumnListStyles = styled.div`
                         margin-bottom: 0;
                 }
         }
+
+        .iconful-li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                list-style-type: none;
+                svg {
+                        color: var(--cmOrange);
+                }
+                svg,
+                p {
+                        display: inline-block;
+                }
+                p {
+                        margin-left: 2em;
+                }
+        }
+
+        .iconless-li {
+                p {
+                        margin-left: 4em;
+                }
+        }
 `;
 
 function TwoColumnList({ heading, cta, listItems, tagline }) {
@@ -39,15 +64,29 @@ function TwoColumnList({ heading, cta, listItems, tagline }) {
                                 {cta ? <CTALink {...cta} /> : ''}
                         </div>
                         <ul className="right-container">
-                                {listItems.map((item, i) => (
-                                        <li>
-                                                <PortableText
-                                                        blocks={item.text}
+                                {listItems.map((item, i) => {
+                                        const icon = item?.listIcon?.icon?.iconifyTitle;
+
+                                        return (
+                                                <li
+                                                        className={icon ? 'iconful-li' : 'iconless-li'}
                                                         data-sal="fade"
                                                         data-sal-delay={i * 100}
-                                                />
-                                        </li>
-                                ))}
+                                                >
+                                                        {icon ? (
+                                                                <Icon
+                                                                        icon={icon}
+                                                                        // vAlign="middle"
+                                                                        width="2em"
+                                                                        className="icon"
+                                                                />
+                                                        ) : (
+                                                                ''
+                                                        )}
+                                                        <PortableText blocks={item.text} />
+                                                </li>
+                                        );
+                                })}
                         </ul>
                 </TwoColumnListStyles>
         );

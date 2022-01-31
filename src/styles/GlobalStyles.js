@@ -8,9 +8,10 @@ const GlobalStyles = createGlobalStyle`
     --cmLightOrange: rgba(252, 158, 79, 0.5);
     --cmWhite: #ffffff;
     --sidePadding: 4.32rem;
+    --bodySidePadding: 10.44rem;
     --doubleSidePadding: 16.438rem;
     --verticalPadding: 6.063rem;
-    --componentPadding: var(--verticalPadding) var(--sidePadding) ;
+    --componentPadding: var(--verticalPadding) var(--bodySidePadding) ;
    --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   html {
@@ -23,7 +24,7 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--cmWhite);
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
-    
+  }
 
   body {
 margin: 0;
@@ -79,16 +80,36 @@ margin: 0;
   }
 
   .orange-underline-container {
-    border-bottom: 0.25em solid var(--cmLightOrange);
+    /* border-bottom: 0.25em solid var(--cmLightOrange); */
+    /* background-color: var(--cmLightOrange);
+    background-size: 2rem 2rem;
     position: relative;
-    bottom: 0.32em;
+    bottom: 2rem; */
+    /* bottom: 0.32 em; */
   }
 
   .orange-underline-text {
-    position: relative;
-    top: 0.32em;
-
+    /* position: static;
+    top: 0.32em; */
+    /* text-decoration: underline 0.25em var(--cmLightOrange); */
+    /* text-decoration-color: var(--cmLightOrange); */
+    position: relative; 
   }
+  .orange-underline-text:after {
+    position: absolute;
+        content: '';
+        height: 0.25em;
+        bottom: 0.06em; 
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: var(--cmLightOrange);
+    }
+   
+
+   
+  
 
 `;
 

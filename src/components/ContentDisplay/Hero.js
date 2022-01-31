@@ -21,7 +21,7 @@ const HeroStyles = styled.div`
 
         .imageful-container,
         .imageless-container {
-                padding: var(--verticalPadding) var(--sidePadding);
+                padding: var(--verticalPadding) var(--bodySidePadding);
         }
 
         .imageful-container {

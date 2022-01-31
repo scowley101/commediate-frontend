@@ -59,16 +59,15 @@ function JobRole({ role: { jobTitle, text } }) {
 function RoleComparison({ heading, jobRoles, tagline }) {
         return (
                 <RoleComparisonStyles>
-                        <PortableText blocks={heading} data-sal="fade" />
-                        <PortableText blocks={tagline} data-sal="fade" />
-
-                        {jobRoles.map((role, i) => (
-                                // console.log(role.text);
-
-                                <JobRole role={role} data-sal="fade" data-sal-delay={i * 100}>
-                                        A role
-                                </JobRole>
-                        ))}
+                        <div className="container" data-sal="fade">
+                                <PortableText blocks={heading} />
+                                <PortableText blocks={tagline} />
+                                {jobRoles.map((role, i) => (
+                                        <div className="role-container" data-sal="fade" data-sal-delay={i * 100}>
+                                                <JobRole role={role} />
+                                        </div>
+                                ))}
+                        </div>
                 </RoleComparisonStyles>
         );
 }
