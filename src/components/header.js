@@ -52,6 +52,7 @@ const Header = ({ showNav, siteTitle, navMenuItems = [] }) => (
                                         ))}
                                 </ul>
                         </div>
+                        <div className="div"></div>
                 )}
         </HeaderStyles>
         // </Headroom>
