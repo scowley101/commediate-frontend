@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
-import Header from './Header';
+import Nav from './Nav';
 
 function Layout(props) {
         const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = props;
 
         return (
                 <>
-                        <Header
+                        <Nav
                                 navMenuItems={navMenuItems}
                                 siteTitle={siteTitle}
                                 onHideNav={onHideNav}
