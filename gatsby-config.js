@@ -2,7 +2,11 @@ require('dotenv').config({
         path: `.env.${process.env.NODE_ENV}`,
 });
 
-export default {
+const clientConfig = require('./client-config');
+
+const isProd = process.env.NODE_ENV === 'production';
+
+module.exports = {
         // siteMetadata: {
         //         title: '',
         //         siteUrl: '',
@@ -19,11 +23,11 @@ export default {
                 {
                         resolve: 'gatsby-source-sanity',
                         options: {
-                                projectId: 'mnpavw3y',
-                                // TODO switch for production when deploying
-                                dataset: 'production',
-                                watchMode: true,
+                                ...clientConfig.sanity,
                                 token: process.env.SANITY_TOKEN,
+                                // TODO switch for production when deploying
+                                watchMode: !isProd,
+                                overlayDrafts: !isProd,
                         },
                 },
                 {
