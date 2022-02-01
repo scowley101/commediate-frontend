@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import Headroom from 'react-headroom';
+// import Headroom from 'react-headroom';
 import CTALink from './CTALink';
 
 const HeaderStyles = styled.nav`
