@@ -59,6 +59,10 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
                                                 }
                                                 meta={[
                                                         {
+                                                                name: 'robots',
+                                                                content: 'noindex',
+                                                        },
+                                                        {
                                                                 name: 'google-site-verification',
                                                                 content: '7MfJFsxBVui5UlEBExUFeMW9-Q6g9fPgoaxwzvbqaV0',
                                                         },
