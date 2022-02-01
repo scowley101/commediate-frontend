@@ -59,6 +59,11 @@ const HeroStyles = styled.div`
                 display: flex;
                 justify-content: center;
         }
+
+        .image {
+                /* width: 100%;
+                height: 100%; */
+        }
 `;
 
 const maybeImage = (illustration) => {
@@ -66,7 +71,14 @@ const maybeImage = (illustration) => {
         if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
                 const imageData = getGatsbyImageData(illustration.image, { maxWidth: 960 }, clientConfig.sanity);
 
-                img = <GatsbyImage className="image" image={imageData} alt={illustration.image.alt} />;
+                img = (
+                        <GatsbyImage
+                                className="image"
+                                object-fit="scale-down"
+                                image={imageData}
+                                alt={illustration.image.alt}
+                        />
+                );
         }
         return img;
 };
