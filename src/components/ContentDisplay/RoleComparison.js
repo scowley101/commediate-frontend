@@ -64,7 +64,7 @@ function RoleComparison({ heading, jobRoles, tagline }) {
                                 <PortableText blocks={tagline} />
                         </div>
                         {jobRoles.map((role, i) => (
-                                <div className="role-container" data-sal="fade" data-sal-delay={i * 100}>
+                                <div className="role-container" data-sal="fade" data-sal-delay={i * 60}>
                                         <JobRole role={role} />
                                 </div>
                         ))}

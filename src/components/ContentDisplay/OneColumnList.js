@@ -64,7 +64,7 @@ function OneColumnList({ heading, cta, listItems, tagline }) {
                                                 <li
                                                         className={icon ? 'iconful-li' : 'iconless-li'}
                                                         data-sal="fade"
-                                                        data-sal-delay={i * 100}
+                                                        data-sal-delay={i * 60}
                                                 >
                                                         {icon ? (
                                                                 <Icon

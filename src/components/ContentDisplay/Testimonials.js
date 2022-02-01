@@ -9,7 +9,7 @@ const TestimonialsStyles = styled.div`
                 margin-top: 3.125rem;
                 display: grid;
                 grid-gap: 2rem;
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
                 .individual {
                         display: flex;
