@@ -8,6 +8,8 @@ import Testimonials from '../components/ContentDisplay/Testimonials';
 import TwoColumnList from '../components/ContentDisplay/TwoColumnList';
 import TwoColumnText from '../components/ContentDisplay/TwoColumnText';
 import OneColumnText from '../components/ContentDisplay/OneColumnText';
+import ComparisonLists from '../components/ContentDisplay/ComparisonLists';
+import HorizontalBlocks from '../components/ContentDisplay/HorizontalBlocks';
 
 const ContentModules = ({ c }) => {
         switch (c._type) {
@@ -37,6 +39,12 @@ const ContentModules = ({ c }) => {
 
                 case 'twoColumnText':
                         return <TwoColumnText key={c._key} {...c} />;
+
+                case 'comparisonLists':
+                        return <ComparisonLists key={c._key} {...c} />;
+
+                case 'horizontalBlocks':
+                        return <HorizontalBlocks key={c._key} {...c} />;
 
                 default:
                         return null;

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import InstagramEmbed from 'react-instagram-embed';
+import { Icon } from '@iconify/react';
 import Figure from './Figure';
 import MainImage from './MainImage';
 import LatexRenderer from './Latex';
@@ -39,6 +40,22 @@ const serializers = {
         },
         marks: {
                 orangeUnderline: ({ children }) => <span className="orange-underline-text">{children}</span>,
+                tickIcon: ({ children }) => (
+                        <div className="tick-icon icon-li">
+                                <div className="icon-container">
+                                        <Icon color="#34D399" width="1.2rem" height="1.2rem" icon="charm:tick" />
+                                </div>
+                                <p>{children}</p>
+                        </div>
+                ),
+                crossIcon: ({ children }) => (
+                        <div className="cross-icon icon-li">
+                                <div className="icon-container">
+                                        <Icon color="#F87171" width="1.2rem" height="1.2rem" icon="charm:cross" />
+                                </div>
+                                <p>{children}</p>
+                        </div>
+                ),
         },
 };
 
