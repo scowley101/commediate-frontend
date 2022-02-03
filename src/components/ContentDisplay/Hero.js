@@ -31,10 +31,15 @@ const HeroStyles = styled.div`
                 position: absolute;
         }
         .imageless-container {
-                background-color: var(--cmGrey);
-
                 display: flex;
                 flex-direction: row;
+                .White {
+                        background-color: var(--cmWhite);
+                }
+
+                .Grey {
+                        background-color: var(--cmGrey);
+                }
         }
 
         .text-container {
@@ -83,11 +88,13 @@ const maybeImage = (illustration) => {
         return img;
 };
 
-function Hero({ cta, heading, illustration, tagline, label }) {
+function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label }) {
         const img = maybeImage(illustration);
+        const bg = backgroundColorRadio?.backgroundColor;
+        console.log(bg);
         return (
                 <HeroStyles data-sal="fade">
-                        <div className={!illustration ? 'imageless-container' : 'imageful-container'}>
+                        <div className={!illustration ? `imageless-container ${bg}` : 'imageful-container'}>
                                 <div className="text-container">
                                         <h4>{label}</h4>
                                         <PortableText className="h2" blocks={heading} />
