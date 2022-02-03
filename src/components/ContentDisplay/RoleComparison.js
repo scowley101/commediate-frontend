@@ -61,6 +61,10 @@ const JobRoleStyles = styled.div`
                 padding-bottom: 1.5rem;
                 h6 {
                         padding-bottom: 1rem;
+                        margin-top: 0;
+                }
+                .icon {
+                        margin-bottom: 0.25rem;
                 }
         }
         .comparison-container {
@@ -96,11 +100,15 @@ const JobRoleStyles = styled.div`
 `;
 
 function JobRole({
-        role: { jobTitle, tagline, applicationTitle, applicationText, capabilitiesTitle, capabilitiesText },
+        role: { jobTitle, tagline, jobIcon, applicationTitle, applicationText, capabilitiesTitle, capabilitiesText },
 }) {
+        const icon = jobIcon?.icon?.iconifyTitle;
         return (
                 <JobRoleStyles>
                         <div className="role-intro-container ">
+                                <div className="icon">
+                                        <Icon icon={icon} />
+                                </div>
                                 <h6>
                                         <span className="orange-underline-container">
                                                 <span className="orange-underline-text">{jobTitle}</span>
@@ -128,7 +136,7 @@ function JobRole({
                 </JobRoleStyles>
         );
 }
-function RoleComparison({ heading, jobRoles, tagline, cta }) {
+function RoleComparison({ heading, tagline, jobRoles, cta }) {
         return (
                 <RoleComparisonStyles>
                         <div className="intro-container" data-sal="fade">
