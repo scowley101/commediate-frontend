@@ -17,6 +17,17 @@ const serializers = {
                 h1: ({ node }) => <h1 className="h1">{node}</h1>,
                 h2: ({ node }) => <h2 className="h2">{node}</h2>,
                 h3: ({ node }) => <h3 className="h3">{node}</h3>,
+                h4: ({ node }) => <h4 className="h4">{node}</h4>,
+                h5: ({ node }) => <h5 className="h5">{node}</h5>,
+                h6: ({ node }) => <h6 className="h6">{node}</h6>,
+                h7: ({ node }) => <h7 className="h7">{node}</h7>,
+                textBase: ({ node }) => <p className="text-base">{node}</p>,
+                textLg: ({ node }) => <p className="text-lg">{node}</p>,
+
+                textXl: ({ node }) => <p className="text-xl">{node}</p>,
+
+                text2Xl: ({ node }) => <p className="text-2xl">{node}</p>,
+
                 authorReference: AuthorReference,
                 mainImage: ({ node }) => <MainImage mainImage={node} />,
                 videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,

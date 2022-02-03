@@ -6,32 +6,45 @@ import CTALink from '../CTALink';
 
 const TwoColumnListStyles = styled.div`
         padding: var(--componentPadding);
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-gap: 2rem;
-        background-color: var(--cmGrey);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
 
-        .left-container,
-        .right-container {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-end;
-                h4,
-                p {
+        .intro-container {
+                .heading > * {
                         margin-top: 0;
                         margin-bottom: 0;
                 }
-        }
-        ul {
-                margin: 0;
-                li {
-                        margin-top: 3rem;
+                .tagline > * {
                         margin-bottom: 0;
+                        margin-top: 2.25rem;
                 }
         }
 
-        .iconful-li {
+        .list-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+
+                margin: 0;
+                list-style-type: none;
+                padding: 0;
+                li {
+                        margin-top: 2rem;
+                        margin-bottom: 0;
+                        width: 25vw;
+                        p {
+                                margin: 0;
+                        }
+                }
+        }
+        button {
+                margin-top: 2.25rem;
+        }
+
+        /* .iconful-li {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -52,42 +65,24 @@ const TwoColumnListStyles = styled.div`
                 p {
                         margin-left: 4em;
                 }
-        }
+        } */
 `;
 
 function TwoColumnList({ heading, cta, listItems, tagline }) {
         return (
                 <TwoColumnListStyles>
-                        <div className="left-container" data-sal="fade">
-                                {heading ? <PortableText blocks={heading} /> : ''}
-                                {tagline ? <PortableText blocks={tagline} /> : ''}
-                                {cta ? <CTALink {...cta} /> : ''}
+                        <div className="intro-container" data-sal="fade">
+                                {heading ? <PortableText className="heading" blocks={heading} /> : ''}
+                                {tagline ? <PortableText className="tagline" blocks={tagline} /> : ''}
                         </div>
-                        <ul className="right-container">
-                                {listItems.map((item, i) => {
-                                        const icon = item?.listIcon?.icon?.iconifyTitle;
-
-                                        return (
-                                                <li
-                                                        className={icon ? 'iconful-li' : 'iconless-li'}
-                                                        data-sal="fade"
-                                                        data-sal-delay={i * 60}
-                                                >
-                                                        {icon ? (
-                                                                <Icon
-                                                                        icon={icon}
-                                                                        // vAlign="middle"
-                                                                        width="2em"
-                                                                        className="icon"
-                                                                />
-                                                        ) : (
-                                                                ''
-                                                        )}
-                                                        <PortableText blocks={item.text} />
-                                                </li>
-                                        );
-                                })}
+                        <ul className="list-container">
+                                {listItems.map((item, i) => (
+                                        <li data-sal="fade" data-sal-delay={i * 60}>
+                                                <PortableText blocks={item.text} />
+                                        </li>
+                                ))}
                         </ul>
+                        {cta ? <CTALink {...cta} /> : ''}
                 </TwoColumnListStyles>
         );
 }
