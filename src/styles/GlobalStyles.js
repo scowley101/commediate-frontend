@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
     --sidePadding: 4.32rem;
     --bodySidePadding: 10.44rem;
     --doubleSidePadding: 16.438rem;
-    --verticalPadding: 6.063rem;
+    --verticalPadding: 5.5rem;
     --componentPadding: var(--verticalPadding) var(--bodySidePadding) ;
    --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   @media screen and (max-width: 1250px) {

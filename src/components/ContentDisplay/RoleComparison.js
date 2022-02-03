@@ -1,14 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 import PortableText from '../PortableText';
+import CTALink from '../CTALink';
 
 const RoleComparisonStyles = styled.div`
         padding: var(--componentPadding);
+        background-color: var(--cmGrey);
+        .intro-container {
+                h6 {
+                        margin-top: 0;
+                        margin-bottom: 2.25rem;
+                }
+                p,
+                button {
+                        margin-top: 0;
+                        margin-bottom: 2rem;
+                }
+        }
+
+        .roles-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+        }
+
+        .role-container {
+                width: 20vw;
+        }
 `;
 
 const JobRoleStyles = styled.div`
-        padding-left: var(--doubleSidePadding);
-        padding-right: var(--doubleSidePadding);
         .role-container {
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -35,39 +57,92 @@ const JobRoleStyles = styled.div`
                 margin-top: 0;
                 margin-bottom: 0;
         }
+        .role-intro-container {
+                padding-bottom: 1.5rem;
+                h6 {
+                        padding-bottom: 1rem;
+                }
+        }
+        .comparison-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        }
+
+        .capabilities-container,
+        .application-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                width: 100%;
+                .content {
+                        margin: 1rem;
+                }
+        }
+
+        .capabilities-container {
+                border: 4px solid var(--cmBlue);
+        }
+        .application-container {
+                border: 4px solid var(--cmOrange);
+        }
+        .icon {
+                margin-bottom: 1.5rem;
+                padding: 0;
+                height: 32px;
+        }
 `;
 
-function JobRole({ role: { jobTitle, text } }) {
+function JobRole({
+        role: { jobTitle, tagline, applicationTitle, applicationText, capabilitiesTitle, capabilitiesText },
+}) {
         return (
                 <JobRoleStyles>
-                        <h5>
-                                <span className="orange-underline-container">
-                                        <span className="orange-underline-text">{jobTitle}</span>
-                                </span>
-                        </h5>
-                        <div className="role-container">
-                                {text.map((i) => (
-                                        <div className="role-detail">
-                                                <h6 className="text-base-bold">{i.listHeading}</h6>
-                                                <PortableText blocks={i.text} />
+                        <div className="role-intro-container ">
+                                <h6>
+                                        <span className="orange-underline-container">
+                                                <span className="orange-underline-text">{jobTitle}</span>
+                                        </span>
+                                </h6>
+                                <p>{tagline}</p>
+                        </div>
+                        <div className="comparison-container">
+                                <div className="capabilities-container">
+                                        <div className="content">
+                                                <h7 className="text-base-bold">{capabilitiesTitle}</h7>
+                                                <PortableText blocks={capabilitiesText} />
                                         </div>
-                                ))}
+                                </div>
+                                <div className="icon">
+                                        <Icon icon="akar-icons:arrow-down" color="var(--cmOrange)" />
+                                </div>
+                                <div className="application-container">
+                                        <div className="content">
+                                                <h7 className="text-base-bold">{applicationTitle}</h7>
+                                                <PortableText blocks={applicationText} />
+                                        </div>
+                                </div>
                         </div>
                 </JobRoleStyles>
         );
 }
-function RoleComparison({ heading, jobRoles, tagline }) {
+function RoleComparison({ heading, jobRoles, tagline, cta }) {
         return (
                 <RoleComparisonStyles>
-                        <div className="container" data-sal="fade">
+                        <div className="intro-container" data-sal="fade">
                                 <PortableText blocks={heading} />
                                 <PortableText blocks={tagline} />
+                                {cta ? <CTALink {...cta} /> : ''}
                         </div>
-                        {jobRoles.map((role, i) => (
-                                <div className="role-container" data-sal="fade" data-sal-delay={i * 60}>
-                                        <JobRole role={role} />
-                                </div>
-                        ))}
+                        <div className="roles-container">
+                                {jobRoles.map((role, i) => (
+                                        <div className="role-container" data-sal="fade" data-sal-delay={i * 60}>
+                                                <JobRole role={role} />
+                                        </div>
+                                ))}
+                        </div>
                 </RoleComparisonStyles>
         );
 }
