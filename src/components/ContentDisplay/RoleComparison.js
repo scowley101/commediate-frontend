@@ -81,20 +81,28 @@ const JobRoleStyles = styled.div`
                 margin-bottom: 1.5rem;
                 width: 100%;
                 .content {
-                        margin: 1rem;
+                        margin: 1.5rem;
                 }
         }
 
         .capabilities-container {
                 border: 4px solid var(--cmBlue);
+                height: 26rem;
         }
         .application-container {
                 border: 4px solid var(--cmOrange);
+                height: 24rem;
         }
         .icon {
                 margin-bottom: 1.5rem;
                 padding: 0;
                 height: 32px;
+        }
+
+        .jobtitle-container {
+        }
+        .tagline {
+                height: 7rem;
         }
 `;
 
@@ -108,12 +116,14 @@ function JobRole({
                                 <div className="icon">
                                         <Icon icon={icon} />
                                 </div>
-                                <h6>
+                                <h6 className="jobtitle-container">
                                         <span className="orange-underline-container">
                                                 <span className="orange-underline-text">{jobTitle}</span>
                                         </span>
                                 </h6>
-                                <p>{tagline}</p>
+                                <div className="tagline">
+                                        <p>{tagline}</p>
+                                </div>
                         </div>
                         <div className="comparison-container">
                                 <div className="capabilities-container">
@@ -143,7 +153,6 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
                         <div className="intro-container" data-sal="fade">
                                 <PortableText blocks={heading} />
                                 <PortableText blocks={tagline} />
-                                {cta ? <CTALink {...cta} /> : ''}
                         </div>
                         <div className="roles-container">
                                 {jobRoles.map((role, i) => (
@@ -152,6 +161,7 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
                                         </div>
                                 ))}
                         </div>
+                        {/* {cta ? <CTALink {...cta} /> : ''} */}
                 </RoleComparisonStyles>
         );
 }

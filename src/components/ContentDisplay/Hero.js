@@ -63,7 +63,11 @@ const HeroStyles = styled.div`
 
         .image-container {
                 display: flex;
+                flex-direction: row;
                 justify-content: center;
+                .gatsby-image-wrapper {
+                        width: 30vw;
+                }
         }
 
         .image {

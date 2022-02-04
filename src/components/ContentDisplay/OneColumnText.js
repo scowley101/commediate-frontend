@@ -8,6 +8,9 @@ const OneColumnTextStyles = styled.div`
         .heading > * {
                 margin-top: 0;
         }
+        .tagline > * {
+                margin-top: 0;
+        }
         h5 {
                 margin-top: 0;
                 margin-bottom: 0;
@@ -26,7 +29,7 @@ function OneColumnText({ backgroundColorRadio, cta, heading, tagline }) {
                         <div data-sal="fade">
                                 <PortableText className="heading" blocks={heading} />
 
-                                <PortableText blocks={tagline} />
+                                <PortableText className="tagline" blocks={tagline} />
 
                                 <CTALink {...cta} />
                         </div>
