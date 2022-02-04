@@ -36,8 +36,8 @@ const GlobalStyles = createGlobalStyle`
     background-color: var(--cmWhite);
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
-    @media screen and (max-width: 1150px) {
-      font-size: 12px;
+    @media screen and (max-width: 800px) {
+      
 
   }
   

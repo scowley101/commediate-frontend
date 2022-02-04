@@ -34,35 +34,44 @@ const Typography = createGlobalStyle`
 
   h2,
   .h2 {
-    font-size: 3.75rem;
-    line-height: 3.75rem;
+    /* font-size: 3.75rem;
+    line-height: 3.75rem; */
+    font-size: 3rem;
+    line-height: 3rem;
   }
 
   h3,
   .h3 {
-    font-size: 3rem;
-    line-height: 3rem;
+    /* font-size: 3rem;
+    line-height: 3rem; */
+    font-size: 2.25rem;
+    line-height: 2.5rem;
 
   }
 
   h4,
   .h4 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
+    /* font-size: 2.25rem;
+    line-height: 2.5rem; */
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   h5,
   .h5 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    /* font-size: 1.875rem;
+    line-height: 2.25rem; */
+    font-size: 1.5rem;
+    line-height: 2rem;
 
   }
 
   h6,
   .h6 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-
+    /* font-size: 1.5rem;
+    line-height: 2rem; */
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
   
   h7,

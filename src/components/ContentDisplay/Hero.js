@@ -9,18 +9,41 @@ import CTALink from '../CTALink';
 
 const HeroStyles = styled.div`
         .background-container {
-                height: 475px;
-                position: static;
-        }
+                z-index: -1;
+                position: absolute;
+                height: 40rem;
+                width: 100vw;
+                .grey-container {
+                        .grey {
+                                background-color: var(--cmGrey);
+                        }
+                        .white {
+                                background-color: var(--cmWhite);
+                        }
 
-        .bottom-whitespace {
-                height: 5.5rem;
+                        height: 75%;
+                        z-index: 50;
+                }
+                .bottom-whitespace {
+                        height: 5.5rem;
+                        height: 25%;
+                }
         }
 
         .imageful-container,
         .imageless-container {
                 padding-left: var(--bodySidePadding);
                 padding-right: var(--bodySidePadding);
+                z-index: 1;
+                @media screen and (max-width: 1110px) {
+                        background-color: var(--cmGrey);
+                        .white {
+                                background-color: var(--cmWhite);
+                        }
+                        .grey {
+                                background-color: var(--cmGrey);
+                        }
+                }
         }
         .solo-header {
                 padding-top: var(--verticalPadding);
@@ -33,10 +56,14 @@ const HeroStyles = styled.div`
 
         .imageful-container {
                 padding: var(--verticalPadding) var(--bodySidePadding);
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                /* grid-template-columns: 1fr 1fr;
                 grid-gap: 2rem;
-                position: absolute;
+                position: absolute; */
+                display: flex;
+                flex-direction: row;
+                @media screen and (max-width: 900px) {
+                        flex-direction: column;
+                }
         }
         .imageless-container {
                 display: flex;
@@ -48,6 +75,10 @@ const HeroStyles = styled.div`
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
+                width: 45vw;
+                @media screen and (max-width: 900px) {
+                        width: 100%;
+                }
 
                 h4 {
                         margin-top: 0;
@@ -57,16 +88,28 @@ const HeroStyles = styled.div`
                         margin-top: 1.625rem;
                         margin-bottom: 0;
                 }
-                .text-image {
-                }
         }
 
         .image-container {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
+                width: 45vw;
                 .gatsby-image-wrapper {
                         width: 30vw;
+                }
+                @media screen and (max-width: 1150px) {
+                        width: 60vw;
+                        .gatsby-image-wrapper {
+                                width: 40vw;
+                        }
+                }
+                @media screen and (max-width: 900px) {
+                        width: 90vw;
+                        margin-top: 2rem;
+                        .gatsby-image-wrapper {
+                                width: 50vw;
+                        }
                 }
         }
 
@@ -99,7 +142,15 @@ function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label
         const backGround = backgroundColorRadio?.backgroundColor;
         console.log(soloHeader);
         return (
-                <HeroStyles data-sal="fade">
+                <HeroStyles>
+                        {illustration ? (
+                                <div className="background-container">
+                                        <div className={`grey-container ${backGround}`} />
+                                        <div className="bottom-whitespace" />
+                                </div>
+                        ) : (
+                                ''
+                        )}
                         <div
                                 className={
                                         !illustration
@@ -118,14 +169,6 @@ function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label
                                 </div>
                                 {illustration ? <div className="image-container">{img}</div> : ''}
                         </div>
-                        {illustration ? (
-                                <>
-                                        <div className={`background-container ${backGround}`} />
-                                        <div className="bottom-whitespace" />
-                                </>
-                        ) : (
-                                ''
-                        )}
                 </HeroStyles>
         );
 }
