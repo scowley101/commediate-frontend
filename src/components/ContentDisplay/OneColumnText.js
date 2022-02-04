@@ -7,16 +7,13 @@ const OneColumnTextStyles = styled.div`
         padding: var(--componentPadding);
         .heading > * {
                 margin-top: 0;
+                margin-bottom: 2.5rem;
         }
         .tagline > * {
                 margin-top: 0;
         }
         h5 {
                 margin-top: 0;
-                margin-bottom: 0;
-        }
-        p {
-                margin-top: 1.5rem;
                 margin-bottom: 0;
         }
 `;

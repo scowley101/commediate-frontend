@@ -25,7 +25,7 @@ const RoleComparisonStyles = styled.div`
         }
 
         .role-container {
-                width: 20vw;
+                width: 25vw;
         }
 `;
 
@@ -88,10 +88,22 @@ const JobRoleStyles = styled.div`
         .capabilities-container {
                 border: 4px solid var(--cmBlue);
                 height: 26rem;
+                @media screen and (max-width: 900px) {
+                        height: 33rem;
+                }
+                @media screen and (max-width: 800px) {
+                        height: 38rem;
+                }
         }
         .application-container {
                 border: 4px solid var(--cmOrange);
                 height: 24rem;
+                @media screen and (max-width: 900px) {
+                        height: 38rem;
+                }
+                @media screen and (max-width: 800px) {
+                        height: 42rem;
+                }
         }
         .icon {
                 margin-bottom: 1.5rem;
