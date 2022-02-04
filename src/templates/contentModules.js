@@ -11,6 +11,7 @@ import OneColumnText from '../components/ContentDisplay/OneColumnText';
 import ComparisonLists from '../components/ContentDisplay/ComparisonLists';
 import HorizontalBlocks from '../components/ContentDisplay/HorizontalBlocks';
 import Contact from '../components/ContentDisplay/Contact';
+import WordCloud from '../components/ContentDisplay/WordCloud';
 
 const ContentModules = ({ c }) => {
         switch (c._type) {
@@ -49,6 +50,9 @@ const ContentModules = ({ c }) => {
 
                 case 'contactForm':
                         return <Contact key={c._key} {...c} />;
+
+                case 'wordCloud':
+                        return <WordCloud key={c._key} {...c} />;
 
                 default:
                         return null;

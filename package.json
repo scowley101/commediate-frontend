@@ -55,6 +55,7 @@
     "react-numeric-input": "^2.2.3",
     "react-player": "^2.9.0",
     "react-slick": "^0.28.1",
+    "react-tagcloud": "^2.2.0",
     "react-vertical-timeline-component": "^3.5.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3"
