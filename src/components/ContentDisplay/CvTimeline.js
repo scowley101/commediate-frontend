@@ -32,11 +32,9 @@ const JobStyles = styled.div`
 
 const CvTimelineStyles = styled.div`
         padding: var(--componentPadding);
-        background-color: var(--cmGrey);
 `;
 
 function Job({ job: { company, companySubtitle, jobRoleList, roleSummaryList, years } }) {
-        console.log(jobRoleList);
         return (
                 <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -63,9 +61,10 @@ function Job({ job: { company, companySubtitle, jobRoleList, roleSummaryList, ye
         );
 }
 
-function CvTimeline({ cvItems }) {
+function CvTimeline({ backgroundColorRadio, cvItems }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
         return (
-                <CvTimelineStyles>
+                <CvTimelineStyles className={backGround}>
                         <VerticalTimeline>
                                 {cvItems.map((job, idx) => (
                                         <Job job={job} key={idx} />

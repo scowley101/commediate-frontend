@@ -27,9 +27,11 @@ const TwoColumnTextStyles = styled.div`
         }
 `;
 
-function TwoColumnText({ cta, heading, tagline }) {
+function TwoColumnText({ backgroundColorRadio, cta, heading, tagline }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <TwoColumnTextStyles>
+                <TwoColumnTextStyles className={backGround}>
                         <div className="left-container" data-sal="fade">
                                 <PortableText blocks={heading} />
 

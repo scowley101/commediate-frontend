@@ -68,9 +68,11 @@ const TwoColumnListStyles = styled.div`
         } */
 `;
 
-function TwoColumnList({ heading, cta, listItems, tagline }) {
+function TwoColumnList({ backgroundColorRadio, heading, cta, listItems, tagline }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <TwoColumnListStyles>
+                <TwoColumnListStyles className={backGround}>
                         <div className="intro-container" data-sal="fade">
                                 {heading ? <PortableText className="heading" blocks={heading} /> : ''}
                                 {tagline ? <PortableText className="tagline" blocks={tagline} /> : ''}

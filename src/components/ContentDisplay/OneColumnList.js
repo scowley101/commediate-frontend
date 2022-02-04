@@ -51,10 +51,11 @@ const OneColumnListStyles = styled.div`
         }
 `;
 
-function OneColumnList({ heading, cta, listItems, tagline }) {
-        console.log(listItems.length);
+function OneColumnList({ backgroundColorRadio, heading, cta, listItems, tagline }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <OneColumnListStyles>
+                <OneColumnListStyles className={backGround}>
                         {heading ? <PortableText blocks={heading} data-sal="fade" /> : ''}
                         {tagline ? <PortableText blocks={tagline} data-sal="fade" /> : ''}
                         <ul>

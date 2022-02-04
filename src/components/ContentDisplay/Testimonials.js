@@ -31,9 +31,11 @@ const TestimonialsStyles = styled.div`
         }
 `;
 
-function Testimonials({ heading, clientTestimonials }) {
+function Testimonials({ backgroundColorRadio, heading, clientTestimonials }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <TestimonialsStyles>
+                <TestimonialsStyles className={backGround}>
                         <div>
                                 <PortableText data-sal="fade" blocks={heading} />
                                 <div className="testimonial-container">

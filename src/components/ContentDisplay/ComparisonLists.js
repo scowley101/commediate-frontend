@@ -5,7 +5,6 @@ import PortableText from '../PortableText';
 
 const ComparisonStyles = styled.div`
         padding: var(--componentPadding);
-        background-color: var(--cmGrey);
         .intro-container {
                 margin-top: 0;
                 .header > * {
@@ -58,11 +57,24 @@ const ComparisonStyles = styled.div`
         }
 `;
 
-function ComparisonLists({ heading, tagline, prosTitle, proIcon, prosList, consTitle, conIcon, consList, cta }) {
+function ComparisonLists({
+        backgroundColorRadio,
+        heading,
+        tagline,
+        prosTitle,
+        proIcon,
+        prosList,
+        consTitle,
+        conIcon,
+        consList,
+        cta,
+}) {
         const prosIcon = proIcon?.icon?.iconifyTitle;
         const consIcon = conIcon?.icon?.iconifyTitle;
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <ComparisonStyles>
+                <ComparisonStyles className={backGround}>
                         {/* <Icon icon={prosIcon} />
                         <Icon icon={consIcon} /> */}
                         <div className="intro-container">

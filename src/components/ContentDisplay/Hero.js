@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -10,7 +9,6 @@ import CTALink from '../CTALink';
 
 const HeroStyles = styled.div`
         .background-container {
-                background-color: var(--cmGrey);
                 height: 475px;
                 position: static;
         }
@@ -21,10 +19,20 @@ const HeroStyles = styled.div`
 
         .imageful-container,
         .imageless-container {
-                padding: var(--verticalPadding) var(--bodySidePadding);
+                padding-left: var(--bodySidePadding);
+                padding-right: var(--bodySidePadding);
+        }
+        .solo-header {
+                padding-top: var(--verticalPadding);
+                padding-bottom: 0;
+        }
+        .full-header {
+                padding-top: var(--verticalPadding);
+                padding-bottom: var(--verticalPadding);
         }
 
         .imageful-container {
+                padding: var(--verticalPadding) var(--bodySidePadding);
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 2rem;
@@ -33,13 +41,6 @@ const HeroStyles = styled.div`
         .imageless-container {
                 display: flex;
                 flex-direction: row;
-                .White {
-                        background-color: var(--cmWhite);
-                }
-
-                .Grey {
-                        background-color: var(--cmGrey);
-                }
         }
 
         .text-container {
@@ -89,12 +90,21 @@ const maybeImage = (illustration) => {
 };
 
 function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label }) {
+        const soloHeader = !cta && !illustration && !tagline;
         const img = maybeImage(illustration);
-        const bg = backgroundColorRadio?.backgroundColor;
-        console.log(bg);
+        const backGround = backgroundColorRadio?.backgroundColor;
+        console.log(soloHeader);
         return (
                 <HeroStyles data-sal="fade">
-                        <div className={!illustration ? `imageless-container ${bg}` : 'imageful-container'}>
+                        <div
+                                className={
+                                        !illustration
+                                                ? `imageless-container ${backGround} ${
+                                                          soloHeader ? 'solo-header' : 'full-header'
+                                                  }`
+                                                : 'imageful-container'
+                                }
+                        >
                                 <div className="text-container">
                                         <h4>{label}</h4>
                                         <PortableText className="h2" blocks={heading} />
@@ -106,7 +116,7 @@ function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label
                         </div>
                         {illustration ? (
                                 <>
-                                        <div className="background-container" />
+                                        <div className={`background-container ${backGround}`} />
                                         <div className="bottom-whitespace" />
                                 </>
                         ) : (

@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   @media screen and (max-width: 1150px) {
-    --sidePadding: 2.61rem;
+    --sidePadding: 2.61rem; 
     --bodySidePadding: 2.61rem;
     --doubleSidePadding: 4.146rem;
   }
@@ -123,7 +123,13 @@ margin: 0;
         background: var(--cmLightOrange);
     }
    
+    .white {
+        background-color: var(--cmWhite);
+    }
 
+    .grey {
+        background-color: var(--cmGrey);
+     }
    
   
 

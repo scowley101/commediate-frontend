@@ -4,7 +4,6 @@ import PortableText from '../PortableText';
 
 const BlockStyles = styled.div`
         padding: var(--componentPadding);
-        background-color: var(--cmGrey);
 
         .centre-container {
                 display: flex;
@@ -13,14 +12,15 @@ const BlockStyles = styled.div`
         }
         .blocks-container {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 grid-gap: 4.188rem;
         }
 `;
 
-function HorizontalBlocks({ blocks }) {
+function HorizontalBlocks({ backgroundColorRadio, blocks }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
         return (
-                <BlockStyles>
+                <BlockStyles className={backGround}>
                         <div className="centre-container">
                                 <div className="blocks-container">
                                         {blocks.map((block) => (

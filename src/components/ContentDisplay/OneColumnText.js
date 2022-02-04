@@ -5,7 +5,9 @@ import CTALink from '../CTALink';
 
 const OneColumnTextStyles = styled.div`
         padding: var(--componentPadding);
-        background-color: var(--cmGrey);
+        .heading > * {
+                margin-top: 0;
+        }
         h5 {
                 margin-top: 0;
                 margin-bottom: 0;
@@ -16,11 +18,13 @@ const OneColumnTextStyles = styled.div`
         }
 `;
 
-function OneColumnText({ cta, heading, tagline }) {
+function OneColumnText({ backgroundColorRadio, cta, heading, tagline }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <OneColumnTextStyles>
+                <OneColumnTextStyles className={backGround}>
                         <div data-sal="fade">
-                                <PortableText blocks={heading} />
+                                <PortableText className="heading" blocks={heading} />
 
                                 <PortableText blocks={tagline} />
 

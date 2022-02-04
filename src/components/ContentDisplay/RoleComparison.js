@@ -6,7 +6,6 @@ import CTALink from '../CTALink';
 
 const RoleComparisonStyles = styled.div`
         padding: var(--componentPadding);
-        background-color: var(--cmGrey);
         .intro-container {
                 h6 {
                         margin-top: 0;
@@ -136,9 +135,11 @@ function JobRole({
                 </JobRoleStyles>
         );
 }
-function RoleComparison({ heading, tagline, jobRoles, cta }) {
+function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
+
         return (
-                <RoleComparisonStyles>
+                <RoleComparisonStyles className={backGround}>
                         <div className="intro-container" data-sal="fade">
                                 <PortableText blocks={heading} />
                                 <PortableText blocks={tagline} />

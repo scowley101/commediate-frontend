@@ -42,7 +42,6 @@ const CTALink = (props) => {
         if (props.landingPageRoute && props.landingPageRoute.slug && props.landingPageRoute.slug.current) {
                 link = props.landingPageRoute.slug.current;
         }
-        console.log(props.link);
         if (props.kind === 'button') {
                 return (
                         <ButtonStyles
