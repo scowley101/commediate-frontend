@@ -12,6 +12,7 @@ import ComparisonLists from '../components/ContentDisplay/ComparisonLists';
 import HorizontalBlocks from '../components/ContentDisplay/HorizontalBlocks';
 import Contact from '../components/ContentDisplay/Contact';
 import WordCloud from '../components/ContentDisplay/WordCloud';
+import FlowList from '../components/ContentDisplay/FlowList';
 
 const ContentModules = ({ c }) => {
         switch (c._type) {
@@ -53,6 +54,9 @@ const ContentModules = ({ c }) => {
 
                 case 'wordCloud':
                         return <WordCloud key={c._key} {...c} />;
+
+                case 'flowLists':
+                        return <FlowList key={c._key} {...c} />;
 
                 default:
                         return null;
