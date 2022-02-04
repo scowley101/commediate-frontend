@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     --cmOrange: #FC9E4F;
     --cmLightOrange: rgba(252, 158, 79, 0.5);
     --cmWhite: #ffffff;
+    --cmLightGrey: #71717A;
     --sidePadding: 4.32rem;
     --bodySidePadding: 10.44rem;
     --doubleSidePadding: 16.438rem;

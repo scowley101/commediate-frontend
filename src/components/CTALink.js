@@ -14,7 +14,7 @@ const doNavigate = (target) => {
         }
 };
 
-const ButtonStyles = styled.button`
+export const ButtonStyles = styled.button`
         font-family: var(--dmSans);
         margin-top: 3.875rem;
         border-radius: 56px;

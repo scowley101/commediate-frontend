@@ -10,7 +10,7 @@ import TwoColumnText from '../components/ContentDisplay/TwoColumnText';
 import OneColumnText from '../components/ContentDisplay/OneColumnText';
 import ComparisonLists from '../components/ContentDisplay/ComparisonLists';
 import HorizontalBlocks from '../components/ContentDisplay/HorizontalBlocks';
-import ContactForm from '../components/ContentDisplay/ContactForm';
+import Contact from '../components/ContentDisplay/Contact';
 
 const ContentModules = ({ c }) => {
         switch (c._type) {
@@ -48,7 +48,7 @@ const ContentModules = ({ c }) => {
                         return <HorizontalBlocks key={c._key} {...c} />;
 
                 case 'contactForm':
-                        return <ContactForm key={c._key} {...c} />;
+                        return <Contact key={c._key} {...c} />;
 
                 default:
                         return null;

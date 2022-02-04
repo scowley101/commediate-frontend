@@ -1,6 +1,39 @@
 // Render Prop
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import styled from 'styled-components';
+import { ButtonStyles } from './CTALink';
+
+const ContactFormStyles = styled.div`
+        form {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                position: relative;
+                bottom: 1rem;
+        }
+
+        input,
+        textArea {
+                border: 1px solid var(--cmBlue);
+                background-color: var(--cmGrey);
+                width: 100%;
+                ::placeholder {
+                        color: var(--cmLightGrey);
+                        font-family: var(--dmSans);
+                        padding: 0.75rem;
+                }
+        }
+        input {
+                height: 2.5rem;
+        }
+        textArea {
+                height: 30vh;
+        }
+        button {
+                margin-top: 1.75rem;
+        }
+`;
 
 const ContactForm = () => {
         const encode = (data) =>
@@ -8,8 +41,7 @@ const ContactForm = () => {
                         .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
                         .join('&');
         return (
-                <div>
-                        <h1>Any place in your app!</h1>
+                <ContactFormStyles>
                         <Formik
                                 initialValues={{ fullName: '', email: '', message: '' }}
                                 validate={(values) => {
@@ -44,11 +76,15 @@ const ContactForm = () => {
                         >
                                 {({ isSubmitting }) => (
                                         <Form name="contact" data-netlify>
-                                                <label htmlFor="fullName">Full Name</label>
+                                                <label htmlFor="fullName">
+                                                        <h7>Full Name</h7>
+                                                </label>
                                                 <Field id="fullName" name="fullName" placeholder="Your full name" />
                                                 <ErrorMessage name="fullName" component="div" />
 
-                                                <label htmlFor="email">Email</label>
+                                                <label htmlFor="email">
+                                                        <h7>Email</h7>
+                                                </label>
                                                 <Field
                                                         id="email"
                                                         name="email"
@@ -57,7 +93,9 @@ const ContactForm = () => {
                                                 />
                                                 <ErrorMessage name="email" component="div" />
 
-                                                <label htmlFor="message">Message</label>
+                                                <label htmlFor="message">
+                                                        <h7>Message</h7>
+                                                </label>
                                                 <Field
                                                         id="message"
                                                         component="textarea"
@@ -67,13 +105,13 @@ const ContactForm = () => {
                                                 />
                                                 <ErrorMessage name="message" component="div" />
 
-                                                <button type="submit" disabled={isSubmitting}>
+                                                <ButtonStyles type="submit" disabled={isSubmitting}>
                                                         Submit
-                                                </button>
+                                                </ButtonStyles>
                                         </Form>
                                 )}
                         </Formik>
-                </div>
+                </ContactFormStyles>
         );
 };
 

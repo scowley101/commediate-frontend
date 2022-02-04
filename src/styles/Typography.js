@@ -67,6 +67,7 @@ const Typography = createGlobalStyle`
   
   h7,
   .h7 {
+    font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
