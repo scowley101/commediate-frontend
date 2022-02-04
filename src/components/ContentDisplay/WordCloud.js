@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TagCloud } from 'react-tagcloud';
-// import ReactWordcloud from 'react-wordcloud';
+import ReactWordcloud from 'react-wordcloud';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/animations/scale.css';
 
@@ -49,7 +49,7 @@ function WordCloud({ backgroundColorRadio, heading, tagline, words }) {
                         </div>
                         <div className="cloud-spacer">
                                 <div className="cloud-container">
-                                        {/* <ReactWordcloud options={options} words={data} /> */}
+                                        <ReactWordcloud options={options} words={data} />
                                 </div>
                         </div>
                 </WordCloudStyles>
