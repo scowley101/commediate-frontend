@@ -1,42 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TagCloud } from 'react-tagcloud';
+import ReactWordcloud from 'react-wordcloud';
+import 'tippy.js/dist/tippy.css';
+import 'tippy.js/animations/scale.css';
+
 import PortableText from '../PortableText';
 
 const WordCloudStyles = styled.div`
         padding: var(--componentPadding);
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        .intro-container,
+        .cloud-spacer {
+                width: 50%;
+        }
+        .tagline > * {
+                margin-top: 0;
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+        }
+        .cloud-container {
+                position: absolute;
+                top: 18rem;
+                left: 50vw;
+        }
 `;
+
+const options = {
+        colors: ['var(--cmBlue)'],
+        fontFamily: 'var(--dmSans)',
+};
 
 function WordCloud({ backgroundColorRadio, heading, tagline, words }) {
         // const backGround = backgroundColorRadio?.backgroundColor;
-
         const data = words.map((word, i) => ({
-                value: word.word,
-                count: i + 1,
+                text: word.word,
+                value: i + 1,
         }));
-
-        const customRenderer = (tag, size, color) => (
-                <span
-                        key={tag.value}
-                        style={{
-                                animation: 'blinker 3s linear infinite',
-                                animationDelay: `${Math.random() * 2}s`,
-                                fontSize: `${size / 2}em`,
-                                border: `2px solid ${color}`,
-                                color: 'var(--cmBlue)',
-                                margin: '3px',
-                                padding: '3px',
-                                display: 'inline-block',
-                                color: 'white',
-                        }}
-                >
-                        {tag.value}
-                </span>
-        );
 
         return (
                 <WordCloudStyles>
-                        <TagCloud tags={data} renderer={customRenderer} minSize={1} maxSize={5} />
+                        <div className="intro-container">
+                                <PortableText blocks={heading} />
+                                <PortableText className="tagline" blocks={tagline} />
+                        </div>
+                        <div className="cloud-spacer">
+                                <div className="cloud-container">
+                                        <ReactWordcloud options={options} words={data} />
+                                </div>
+                        </div>
                 </WordCloudStyles>
         );
 }

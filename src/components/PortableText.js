@@ -1,6 +1,6 @@
 import React from 'react';
 import BasePortableText from '@sanity/block-content-to-react';
-import { PortableText as Port } from '@portabletext/react';
+// import { PortableText as Port } from '@portabletext/react';
 import clientConfig from '../../client-config';
 import serializers from './Serializers';
 
