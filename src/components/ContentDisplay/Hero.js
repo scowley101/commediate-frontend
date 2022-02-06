@@ -35,15 +35,6 @@ const HeroStyles = styled.div`
                 padding-left: var(--bodySidePadding);
                 padding-right: var(--bodySidePadding);
                 z-index: 1;
-                @media screen and (max-width: 1110px) {
-                        background-color: var(--cmGrey);
-                        .white {
-                                background-color: var(--cmWhite);
-                        }
-                        .grey {
-                                background-color: var(--cmGrey);
-                        }
-                }
         }
         .solo-header {
                 padding-top: var(--verticalPadding);
@@ -61,9 +52,6 @@ const HeroStyles = styled.div`
                 position: absolute; */
                 display: flex;
                 flex-direction: row;
-                @media screen and (max-width: 900px) {
-                        flex-direction: column;
-                }
         }
         .imageless-container {
                 display: flex;
@@ -76,10 +64,6 @@ const HeroStyles = styled.div`
                 align-items: flex-start;
                 justify-content: flex-start;
                 width: 45vw;
-                @media screen and (max-width: 900px) {
-                        width: 100%;
-                }
-
                 h4 {
                         margin-top: 0;
                         margin-bottom: 0;
@@ -98,24 +82,44 @@ const HeroStyles = styled.div`
                 .gatsby-image-wrapper {
                         width: 30vw;
                 }
-                @media screen and (max-width: 1150px) {
+        }
+
+        @media screen and (max-width: 1150px) {
+                .image-container {
                         width: 60vw;
                         .gatsby-image-wrapper {
                                 width: 40vw;
                         }
                 }
-                @media screen and (max-width: 900px) {
+        }
+
+        @media screen and (max-width: 1110px) {
+                .imageful-container,
+                .imageless-container {
+                        background-color: var(--cmGrey);
+                        .white {
+                                background-color: var(--cmWhite);
+                        }
+                        .grey {
+                                background-color: var(--cmGrey);
+                        }
+                }
+        }
+
+        @media screen and (max-width: 900px) {
+                .imageful-container {
+                        flex-direction: column;
+                }
+                .text-container {
+                        width: 100%;
+                }
+                .image-container {
                         width: 90vw;
                         margin-top: 2rem;
                         .gatsby-image-wrapper {
                                 width: 50vw;
                         }
                 }
-        }
-
-        .image {
-                /* width: 100%;
-                height: 100%; */
         }
 `;
 
