@@ -7,7 +7,9 @@ import { SiteContext } from './context/SiteContext';
 import NavIcon from './NavIcon';
 
 const NavMobileStyles = styled.div`
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         .nav-container {
                 z-index: 98;
                 height: 100vh;

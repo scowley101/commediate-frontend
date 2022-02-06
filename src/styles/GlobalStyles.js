@@ -36,6 +36,9 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     font-size: 16px;
     background-color: var(--cmWhite);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
