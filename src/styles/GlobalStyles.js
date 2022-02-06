@@ -25,7 +25,7 @@ const GlobalStyles = createGlobalStyle`
     --bodySidePadding: 2.61rem;
     --doubleSidePadding: 4.146rem;
   }
-  
+
   }
 
   html {
@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     font-size: 16px;
     background-color: var(--cmWhite);
+
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
     @media screen and (max-width: 800px) {
@@ -48,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
   body {
 margin: 0;
     font-size: 2rem;
+    overflow-x: hidden;
   }
 
   /* fieldset {

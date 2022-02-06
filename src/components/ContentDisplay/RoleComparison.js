@@ -17,152 +17,145 @@ const RoleComparisonStyles = styled.div`
                         margin-bottom: 2rem;
                 }
         }
-
-        .roles-container {
+        .grid-container {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: center;
         }
-
-        .role-container {
-                width: 25vw;
-        }
-`;
-
-const JobRoleStyles = styled.div`
-        .role-container {
+        .roles-container {
+                width: 100%;
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                column-gap: 5rem;
+                grid-template-rows: repeat(4, minmax(50px, min-content));
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-flow: column;
         }
-        .role-detail {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-        }
-        h5 {
-                margin-top: 4.06rem;
-                margin-bottom: 0;
-        }
-        h6 {
-                margin-top: 1.56rem;
-                margin-bottom: 0;
-        }
-        ul {
-                margin-top: 0.44rem;
-                margin-bottom: 0;
-        }
-        p {
-                margin-top: 0;
-                margin-bottom: 0;
-        }
-        .role-intro-container {
-                padding-bottom: 1.5rem;
-                h6 {
-                        padding-bottom: 1rem;
-                        margin-top: 0;
+        .role-intro {
+                > * {
+                        margin: 0;
                 }
-                .icon {
-                        margin-bottom: 0.25rem;
+                p {
+                        margin-top: 1.125rem;
+                        margin-bottom: 1.5rem;
                 }
-        }
-        .comparison-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                .v0 {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 1;
+                        grid-row-end: 2;
+                }
+                .v1 {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                        grid-row-start: 1;
+                        grid-row-end: 2;
+                }
+                .v2 {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                        grid-row-start: 1;
+                        grid-row-end: 2;
+                }
         }
 
         .capabilities-container,
         .application-container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 0;
-                margin-bottom: 1.5rem;
-                width: 100%;
-                .content {
-                        margin: 1.5rem;
+                p {
+                        margin-top: 0;
+                        margin-bottom: 0.25rem;
                 }
         }
 
         .capabilities-container {
-                border: 4px solid var(--cmBlue);
-                height: 26rem;
+                border: solid 2px var(--cmBlue);
+                padding: 1rem;
+
+                .v0 {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                }
+                .v1 {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                }
+                .v2 {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                        grid-row-start: 2;
+                        grid-row-end: 3;
+                }
+        }
+        .icon-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                > * {
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                }
+                .v0 {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 3;
+                        grid-row-end: 4;
+                }
+                .v1 {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                        grid-row-start: 3;
+                        grid-row-end: 4;
+                }
+                .v2 {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                        grid-row-start: 3;
+                        grid-row-end: 4;
+                }
         }
         .application-container {
-                border: 4px solid var(--cmOrange);
-                height: 24rem;
-        }
-        .icon {
-                margin-bottom: 1.5rem;
-                padding: 0;
-                height: 32px;
-        }
+                border: solid 2px var(--cmOrange);
+                padding: 1rem;
 
-        .jobtitle-container {
+                .v0 {
+                        grid-column-start: 1;
+                        grid-column-end: 2;
+                        grid-row-start: 4;
+                        grid-row-end: 5;
+                }
+                .v1 {
+                        grid-column-start: 2;
+                        grid-column-end: 3;
+                        grid-row-start: 4;
+                        grid-row-end: 5;
+                }
+                .v2 {
+                        grid-column-start: 3;
+                        grid-column-end: 4;
+                        grid-row-start: 4;
+                        grid-row-end: 5;
+                }
         }
-        .tagline {
-                height: 7rem;
+        @media screen and (max-width: 1400px) {
+                .roles-container {
+                        column-gap: 2rem;
+                }
         }
 
         @media screen and (max-width: 900px) {
-                .capabilities-container {
-                        height: 33rem;
+                .roles-container {
+                        display: flex;
+                        flex-direction: column;
                 }
                 .application-container {
-                        height: 38rem;
-                }
-        }
-
-        @media screen and (max-width: 800px) {
-                .capabilities-container {
-                        height: 38rem;
-                }
-                .application-container {
-                        height: 42rem;
+                        margin-bottom: 3rem;
                 }
         }
 `;
 
-function JobRole({
-        role: { jobTitle, tagline, jobIcon, applicationTitle, applicationText, capabilitiesTitle, capabilitiesText },
-}) {
-        const icon = jobIcon?.icon?.iconifyTitle;
-        return (
-                <JobRoleStyles>
-                        <div className="role-intro-container ">
-                                <div className="icon">
-                                        <Icon icon={icon} />
-                                </div>
-                                <h6 className="jobtitle-container">
-                                        <span className="orange-underline-container">
-                                                <span className="orange-underline-text">{jobTitle}</span>
-                                        </span>
-                                </h6>
-                                <div className="tagline">
-                                        <p>{tagline}</p>
-                                </div>
-                        </div>
-                        <div className="comparison-container">
-                                <div className="capabilities-container">
-                                        <div className="content">
-                                                <h7 className="text-base-bold">{capabilitiesTitle}</h7>
-                                                <PortableText blocks={capabilitiesText} />
-                                        </div>
-                                </div>
-                                <div className="icon">
-                                        <Icon icon="akar-icons:arrow-down" color="var(--cmOrange)" />
-                                </div>
-                                <div className="application-container">
-                                        <div className="content">
-                                                <h7 className="text-base-bold">{applicationTitle}</h7>
-                                                <PortableText blocks={applicationText} />
-                                        </div>
-                                </div>
-                        </div>
-                </JobRoleStyles>
-        );
-}
 function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta }) {
         const backGround = backgroundColorRadio?.backgroundColor;
 
@@ -172,12 +165,42 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
                                 <PortableText blocks={heading} />
                                 <PortableText blocks={tagline} />
                         </div>
-                        <div className="roles-container">
-                                {jobRoles.map((role, i) => (
-                                        <div className="role-container" data-sal="fade" data-sal-delay={i * 60}>
-                                                <JobRole role={role} />
-                                        </div>
-                                ))}
+                        <div className="grid-container">
+                                <div className="roles-container">
+                                        {jobRoles.map((role, i) => (
+                                                <>
+                                                        <div className={`role-intro v${i}`}>
+                                                                <Icon icon={role.jobIcon.icon.iconifyTitle} />
+                                                                <h6 className="jobtitle-container">
+                                                                        <span className="orange-underline-container">
+                                                                                <span className="orange-underline-text">
+                                                                                        {role.jobTitle}
+                                                                                </span>
+                                                                        </span>
+                                                                </h6>
+                                                                <p>{role.tagline}</p>
+                                                        </div>
+                                                        <div className={`capabilities-container v${i}`}>
+                                                                <h7 className="text-base-bold">
+                                                                        {role.capabilitiesTitle}
+                                                                </h7>
+                                                                <PortableText blocks={role.capabilitiesText} />
+                                                        </div>
+                                                        <div className={`icon-container v${i}`}>
+                                                                <Icon
+                                                                        icon="akar-icons:arrow-down"
+                                                                        color="var(--cmOrange)"
+                                                                />
+                                                        </div>
+                                                        <div className={`application-container v${i}`}>
+                                                                <h7 className="text-base-bold">
+                                                                        {role.applicationTitle}
+                                                                </h7>
+                                                                <PortableText blocks={role.applicationText} />
+                                                        </div>
+                                                </>
+                                        ))}
+                                </div>
                         </div>
                         {/* {cta ? <CTALink {...cta} /> : ''} */}
                 </RoleComparisonStyles>
