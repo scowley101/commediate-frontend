@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 // import Headroom from 'react-headroom';
 import CTALink from './CTALink';
+// import NavIcon from './NavIcon';
+import NavMobile from './NavMobile';
 
 const NavStyles = styled.nav`
         position: -webkit-sticky; /* Safari */
@@ -33,6 +35,12 @@ const NavStyles = styled.nav`
                         margin: 0 1.5rem;
                 }
         }
+
+        @media screen and (max-width: 900px) {
+                .nav-items-container {
+                        display: none;
+                }
+        }
 `;
 
 const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
@@ -50,6 +58,8 @@ const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
                                                         <CTALink {...i} />
                                                 </li>
                                         ))}
+
+                                        {/* <NavMobile /> */}
                                 </ul>
                         </div>
                 )}

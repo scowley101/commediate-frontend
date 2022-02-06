@@ -3,6 +3,7 @@ import Footer from './Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import Nav from './Nav';
+import NavMobile from './NavMobile';
 
 function Layout(props) {
         const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = props;
@@ -10,6 +11,13 @@ function Layout(props) {
         return (
                 <>
                         <Nav
+                                navMenuItems={navMenuItems}
+                                siteTitle={siteTitle}
+                                onHideNav={onHideNav}
+                                onShowNav={onShowNav}
+                                showNav={showNav}
+                        />
+                        <NavMobile
                                 navMenuItems={navMenuItems}
                                 siteTitle={siteTitle}
                                 onHideNav={onHideNav}
