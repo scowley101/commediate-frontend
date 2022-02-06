@@ -13,6 +13,7 @@ import HorizontalBlocks from '../components/ContentDisplay/HorizontalBlocks';
 import Contact from '../components/ContentDisplay/Contact';
 import WordCloud from '../components/ContentDisplay/WordCloud';
 import FlowList from '../components/ContentDisplay/FlowList';
+import IconPlug from '../components/ContentDisplay/IconPlug';
 
 const ContentModules = ({ c }) => {
         switch (c._type) {
@@ -57,6 +58,9 @@ const ContentModules = ({ c }) => {
 
                 case 'flowLists':
                         return <FlowList key={c._key} {...c} />;
+
+                // case 'iconPlug':
+                //         return <IconPlug key={c._key} {...c} />;
 
                 default:
                         return null;

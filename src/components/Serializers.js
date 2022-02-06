@@ -2,6 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import InstagramEmbed from 'react-instagram-embed';
 import { Icon } from '@iconify/react';
+import sal from 'sal.js';
 import Figure from './Figure';
 import MainImage from './MainImage';
 import LatexRenderer from './Latex';
@@ -39,7 +40,11 @@ const serializers = {
                 math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
         },
         marks: {
-                orangeUnderline: ({ children }) => <span className="orange-underline-text">{children}</span>,
+                orangeUnderline: ({ children }) => (
+                        <span className="orange-underline-text" data-sal="slide-right" data-sal-delay="300">
+                                {children}
+                        </span>
+                ),
                 tickIcon: ({ children }) => (
                         <div className="tick-icon icon-li">
                                 <div className="icon-container">
