@@ -53,6 +53,8 @@ const GlobalStyles = createGlobalStyle`
 margin: 0;
     font-size: 2rem;
     overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* fieldset {
