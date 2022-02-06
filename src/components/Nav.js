@@ -6,7 +6,7 @@ import CTALink from './CTALink';
 // import NavIcon from './NavIcon';
 import NavMobile from './NavMobile';
 
-const NavStyles = styled.nav`
+const NavStyles = styled.div`
         position: -webkit-sticky; /* Safari */
         position: sticky;
         top: 0;

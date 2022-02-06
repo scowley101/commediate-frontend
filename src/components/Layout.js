@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Footer from './Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import Nav from './Nav';
 import NavMobile from './NavMobile';
+
+const LayoutStyles = styled.div`
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+`;
 
 function Layout(props) {
         const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = props;

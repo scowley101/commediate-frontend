@@ -14,7 +14,7 @@ const NavIconStyles = styled.button`
         background: transparent;
         border: none;
         cursor: pointer;
-        z-index: 100;
+        z-index: 102;
 
         div {
                 width: 1.5rem;
