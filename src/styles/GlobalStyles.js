@@ -32,13 +32,13 @@ const GlobalStyles = createGlobalStyle`
     /* display: flex;
     flex-direction: row;
     justify-content: center; */ 
-    max-width: 2100px;
-    margin: 0 auto;
+    max-width: 2500px;
+    width: 100vw;
+    /* margin: 0 auto; */
     font-size: 16px;
     background-color: var(--cmWhite);
     overflow-x: hidden;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
 
     /* margin: 0 8rem; */
     scroll-behavior: smooth;
@@ -51,6 +51,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
 margin: 0;
+padding: 0;
+padding-right: 0;
     font-size: 2rem;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -85,21 +87,21 @@ margin: 0;
 
 
   /* Scrollbar Styles */
-  body::-webkit-scrollbar {
+  /* body::-webkit-scrollbar {
     width: 12px;
   }
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--mbOrange) var(--cmWhite);
+    scrollbar-color: var(--cmOrange) var(--cmWhite);
   }
   body::-webkit-scrollbar-track {
     background: var(--cmWhite);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--mbOrange) ;
+    background-color: var(--cmOrange) ;
     border-radius: 6px;
     border: 3px solid var(--cmWhite);
-  }
+  } */
 
 
   img {
