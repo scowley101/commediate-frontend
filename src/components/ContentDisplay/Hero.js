@@ -120,6 +120,12 @@ const HeroStyles = styled.div`
                         }
                 }
         }
+        @media screen and (max-width: 500px) {
+                .h2 > * {
+                        font-size: 2.25rem;
+                        line-height: 2.5rem;
+                }
+        }
 `;
 
 const maybeImage = (illustration) => {

@@ -41,13 +41,20 @@ const NavStyles = styled.div`
                         display: none;
                 }
         }
+        @media screen and (max-width: 500px) {
+                .site-tite {
+                        width: 5rem;
+                }
+        }
 `;
 
 const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
         // <Headroom>
         <NavStyles>
-                <div>
-                        <Link to="/">{siteTitle}</Link>
+                <div className="site-tite-container">
+                        <Link className="site-tite" to="/">
+                                {siteTitle}
+                        </Link>
                 </div>
 
                 {showNav && navMenuItems && (

@@ -25,6 +25,15 @@ const TwoColumnTextStyles = styled.div`
                         margin-bottom: 0;
                 }
         }
+        @media screen and (max-width: 600px) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                button {
+                        margin-top: 1.5rem;
+                }
+        }
 `;
 
 function TwoColumnText({ backgroundColorRadio, cta, heading, tagline }) {
