@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, navigate } from 'gatsby';
 import styled from 'styled-components';
+import { SiteContext } from './context/SiteContext';
 
 const doNavigate = (target) => {
         if (!target || !target.length) {
@@ -65,8 +66,10 @@ const CTALink = (props) => {
                 );
         }
 
+        const { isNavOpen, toggleNavOpen } = useContext(SiteContext);
+
         return (
-                <Link className="gatsby link variable" to={`/${link}`}>
+                <Link className="gatsby link variable" to={`/${link}`} onClick={isNavOpen && toggleNavOpen}>
                         {props.title}
                 </Link>
         );

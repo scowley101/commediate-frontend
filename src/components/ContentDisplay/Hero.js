@@ -94,8 +94,7 @@ const HeroStyles = styled.div`
         }
 
         @media screen and (max-width: 1110px) {
-                .imageful-container,
-                .imageless-container {
+                .imageful-container {
                         background-color: var(--cmGrey);
                         .white {
                                 background-color: var(--cmWhite);
