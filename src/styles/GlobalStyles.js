@@ -55,6 +55,7 @@ margin: 0;
     overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   /* fieldset {
