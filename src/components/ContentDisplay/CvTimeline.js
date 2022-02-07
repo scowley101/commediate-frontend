@@ -6,7 +6,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 const JobStyles = styled.div`
         padding: 0;
-        padding-bottom: 3.625rem;
+        /* padding-bottom: 3.625rem; */
         h6,
         p {
                 margin: 0;
@@ -14,6 +14,12 @@ const JobStyles = styled.div`
         ul {
                 margin-top: 1.5rem;
                 margin-bottom: 0;
+        }
+        p {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                font-weight: 400;
+                margin: 0;
         }
 
         .timeline-marker {
@@ -34,13 +40,21 @@ const CvTimelineStyles = styled.div`
         padding: var(--componentPadding);
 `;
 
+const contentStyle = { background: 'var(--cmWhite)', color: 'var(--cmBlue)', fontWeight: '400' };
+
 function Job({ job: { company, companySubtitle, jobRoleList, roleSummaryList, years } }) {
         return (
                 <VerticalTimelineElement
                         className="vertical-timeline-element--work"
-                        contentStyle={{ background: '--cmBlue', color: 'black' }}
+                        contentStyle={contentStyle}
                         date={years}
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#000000' }}
+                        dateClassName="date"
+                        iconStyle={{
+                                background: 'var(--cmGrey)',
+                                color: '#000000',
+                                boxShadow: 'none',
+                                border: '4px var(--cmOrange) solid',
+                        }}
                         // icon={<WorkIcon />}
                 >
                         <JobStyles>
@@ -65,7 +79,7 @@ function CvTimeline({ backgroundColorRadio, cvItems }) {
         const backGround = backgroundColorRadio?.backgroundColor;
         return (
                 <CvTimelineStyles className={backGround}>
-                        <VerticalTimeline>
+                        <VerticalTimeline lineColor="var(--cmBlue">
                                 {cvItems.map((job, idx) => (
                                         <Job job={job} key={idx} />
                                 ))}

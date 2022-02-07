@@ -56,6 +56,9 @@ const HeroStyles = styled.div`
         .imageless-container {
                 display: flex;
                 flex-direction: row;
+                .text-container {
+                        width: 100%;
+                }
         }
 
         .text-container {

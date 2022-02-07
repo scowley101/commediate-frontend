@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import Headroom from 'react-headroom';
+// import Headroom from 'react-headroom';
 import CTALink from './CTALink';
 // import NavIcon from './NavIcon';
 import NavMobile from './NavMobile';
@@ -49,29 +49,29 @@ const NavStyles = styled.div`
 `;
 
 const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
-        <Headroom>
-                <NavStyles>
-                        <div className="site-tite-container">
-                                <Link className="site-tite" to="/">
-                                        {siteTitle}
-                                </Link>
+        // <Headroom>
+        <NavStyles>
+                <div className="site-tite-container">
+                        <Link className="site-tite" to="/">
+                                {siteTitle}
+                        </Link>
+                </div>
+
+                {showNav && navMenuItems && (
+                        <div className="nav-items-container">
+                                <ul>
+                                        {navMenuItems.map((i) => (
+                                                <li className="text-lg">
+                                                        <CTALink {...i} />
+                                                </li>
+                                        ))}
+
+                                        {/* <NavMobile /> */}
+                                </ul>
                         </div>
-
-                        {showNav && navMenuItems && (
-                                <div className="nav-items-container">
-                                        <ul>
-                                                {navMenuItems.map((i) => (
-                                                        <li className="text-lg">
-                                                                <CTALink {...i} />
-                                                        </li>
-                                                ))}
-
-                                                {/* <NavMobile /> */}
-                                        </ul>
-                                </div>
-                        )}
-                </NavStyles>
-        </Headroom>
+                )}
+        </NavStyles>
+        // </Headroom>
 );
 
 export default Nav;
