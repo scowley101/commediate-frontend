@@ -6,6 +6,7 @@ import sal from 'sal.js';
 import Figure from './Figure';
 import MainImage from './MainImage';
 import LatexRenderer from './Latex';
+import Underline from './Underline';
 
 const AuthorReference = ({ node }) => {
         if (node && node.author && node.author.name) {
@@ -40,11 +41,9 @@ const serializers = {
                 math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
         },
         marks: {
-                orangeUnderline: ({ children }) => (
-                        <span className="orange-underline-text" data-sal="slide-right" data-sal-delay="300">
-                                {children}
-                        </span>
-                ),
+                orangeUnderline: ({ children }) => <span className="orange-underline-text">{children}</span>,
+                // orangeUnderline: ({ children }) => <Underline>{children}</Underline>,
+
                 tickIcon: ({ children }) => (
                         <div className="tick-icon icon-li">
                                 <div className="icon-container">

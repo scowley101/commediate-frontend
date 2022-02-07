@@ -202,7 +202,7 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
                                         ))}
                                 </div>
                         </div>
-                        {/* {cta ? <CTALink {...cta} /> : ''} */}
+                        {cta ? <CTALink {...cta} /> : ''}
                 </RoleComparisonStyles>
         );
 }

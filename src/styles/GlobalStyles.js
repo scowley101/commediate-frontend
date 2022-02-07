@@ -116,7 +116,6 @@ padding-right: 0;
     bottom: 2rem; */
     /* bottom: 0.32 em; */
   }
-
   .orange-underline-text {
     /* position: static;
     top: 0.32em; */
@@ -135,7 +134,6 @@ padding-right: 0;
         width: 100%;
         background: var(--cmLightOrange);
     }
-   
     .white {
         background-color: var(--cmWhite);
     }
