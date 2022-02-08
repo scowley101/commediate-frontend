@@ -1,11 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TagCloud } from 'react-tagcloud';
-import ReactWordcloud from 'react-wordcloud';
-// import 'tippy.js/dist/tippy.css';
-// import 'tippy.js/animations/scale.css';
-import { getGatsbyImageData } from 'gatsby-source-sanity';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import PortableText from '../PortableText';
 import clientConfig from '../../../client-config';
 
@@ -14,9 +8,17 @@ const WordCloudStyles = styled.div`
         display: flex;
         flex-direction: row;
         height: fit-content;
-        .intro-container,
-        .cloud-spacer {
-                width: 50%;
+
+        .white {
+                background-color: var(--cmWhite);
+        }
+
+        .grey {
+                background-color: var(--cmGrey);
+        }
+
+        .heading > * {
+                margin-top: 0;
         }
         .tagline > * {
                 margin-top: 0;
@@ -24,71 +26,89 @@ const WordCloudStyles = styled.div`
                 font-size: 1.25rem;
                 line-height: 1.75rem;
         }
+        .intro-container,
         .cloud-container {
-                position: absolute;
-                width: 30vw;
-                height: 30vh;
-                top: 15rem;
-                left: 55vw;
+                width: 50%;
         }
-        .image-container {
-                height: 1vh;
+
+        .cloud-container {
                 position: relative;
-                bottom: 15rem;
-                .gatsby-image-wrapper {
-                        height: 45vh;
-                        width: 45vh;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                .word {
+                        position: absolute;
+                        margin: 0;
+                }
+                .word-one {
+                        top: 78%;
+                        right: 52%;
+                }
+                .word-two {
+                        top: 55%;
+                        right: 72%;
+                }
+                .word-three {
+                        top: 5%;
+                        right: 50%;
+                }
+                .word-four {
+                        top: 22%;
+                        right: 70%;
+                }
+                .word-five {
+                        top: 35%;
+                        right: 20%;
+                }
+                .word-six {
+                        top: 15%;
+                        right: 22%;
+                }
+                .word-seven {
+                        top: 60%;
+                        right: 39%;
+                }
+                .word-eight {
+                        top: 72%;
+                        right: 12%;
+                }
+                .word-nine {
+                        top: 90%;
+                        right: 38%;
+                }
+                .word-ten {
+                        top: 30%;
+                        right: 55%;
                 }
         }
 `;
-
-const options = {
-        colors: ['var(--cmBlue)'],
-        fontFamily: 'var(--dmSans)',
-        enableTooltip: false,
-        padding: 30,
-        scale: 50,
-};
-
-const maybeImage = (image) => {
-        let img = null;
-        if (image && image.image && image.image.asset && !image.disabled) {
-                const imageData = getGatsbyImageData(image.image, { maxWidth: 960 }, clientConfig.sanity);
-
-                img = (
-                        <GatsbyImage
-                                className="image"
-                                object-fit="scale-down"
-                                height="30rem"
-                                image={imageData}
-                                alt={image.image.alt}
-                        />
-                );
-        }
-        return img;
-};
-
-function WordCloud({ backgroundColorRadio, heading, image, tagline, words }) {
-        // const backGround = backgroundColorRadio?.backgroundColor;
-        const data = words.map((word, i) => ({
-                text: word.word,
-                value: i + 1,
-        }));
-
-        const img = maybeImage(image);
+// TODO: Make word cloud words editable via Sanity
+function WordCloud({ backgroundColorRadio, heading, tagline, words }) {
+        const backGround = backgroundColorRadio?.backgroundColor;
 
         return (
-                <WordCloudStyles>
+                <WordCloudStyles className={backGround}>
                         <div className="intro-container">
-                                <PortableText blocks={heading} />
+                                <PortableText className="heading" blocks={heading} />
                                 <PortableText className="tagline" blocks={tagline} />
                         </div>
-                        {/* <div className="cloud-spacer">
-                                <div className="cloud-container">
-                                        <ReactWordcloud options={options} words={data} />
-                                </div>
-                        </div> */}
-                        <div className="image-container">{img}</div>
+
+                        <div className="cloud-container">
+                                <span className="orange-undrline-container">
+                                        <p className="title h5 orange-underline-text">COMMediate</p>
+                                </span>
+                                <p className="word word-one text-sm bold">Cooperation</p>
+                                <p className="word word-two text-xs bold">Comprehension</p>
+                                <p className="word word-three text-xs bold">Communication</p>
+                                <p className="word word-four text-sm">Resolution</p>
+                                <p className="word word-five text-sm">Deal</p>
+                                <p className="word word-six text-sm bold">Commercial</p>
+                                <p className="word word-seven text-sm">Dispute</p>
+                                <p className="word word-eight text-xs bold">Collaboration</p>
+                                <p className="word word-nine text-sm">Deliver</p>
+                                <p className="word word-ten text-sm">Clarity</p>
+                        </div>
                 </WordCloudStyles>
         );
 }

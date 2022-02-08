@@ -110,6 +110,22 @@ const Typography = createGlobalStyle`
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  .text-sm {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .text-xs {
+    font-weight: 400;
+    font-size: 0.754rem;
+    line-height: 1rem;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
   
   a {
 
