@@ -71,13 +71,13 @@ const RoleComparisonStyles = styled.div`
         }
         .box-title-cap {
                 position: absolute;
-                rotate: 270deg;
+                transform: rotate(270deg);
                 left: -4.5rem;
                 top: 3rem;
         }
         .box-title-app {
                 position: absolute;
-                rotate: 270deg;
+                transform: rotate(270deg);
                 left: -8rem;
                 top: 6.5rem;
                 color: var(--cmOrange);
@@ -173,7 +173,7 @@ const RoleComparisonStyles = styled.div`
                 .box-title-cap,
                 .box-title-app {
                         position: static;
-                        rotate: 0deg;
+                        transform: rotate(0deg);
                         left: 0;
                         top: 0;
                 }
