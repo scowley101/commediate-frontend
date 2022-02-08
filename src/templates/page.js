@@ -59,10 +59,11 @@ const Page = (props) => {
         // };
 
         const menuItems = page.navMenu && (page.navMenu.items || []);
+        const footerItems = page.footerNav && (page.footerNav.items || []);
         const pageTitle = data.route && !data.route.useSiteTitle && page.title;
 
         return (
-                <Layout navMenuItems={menuItems}>
+                <Layout navMenuItems={menuItems} footerNavItems={footerItems}>
                         <SEO
                                 title={pageTitle}
                                 description={site.description}

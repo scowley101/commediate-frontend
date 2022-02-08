@@ -69,9 +69,11 @@ const CTALink = (props) => {
         const { isNavOpen, toggleNavOpen } = useContext(SiteContext);
 
         return (
-                <Link className="gatsby link variable" to={`/${link}`} onClick={isNavOpen && toggleNavOpen}>
-                        {props.title}
-                </Link>
+                <span className="orange-underline-link">
+                        <Link className="gatsby link variable" to={`/${link}`} onClick={isNavOpen && toggleNavOpen}>
+                                {props.title}
+                        </Link>
+                </span>
         );
 };
 

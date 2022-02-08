@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import { Icon } from '@iconify/react';
 import CTALink from './CTALink';
 
 const FooterStyles = styled.nav`
@@ -17,6 +18,7 @@ const FooterStyles = styled.nav`
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-end;
+                        padding-left: 0;
                 }
                 li {
                         display: flex;
@@ -28,19 +30,61 @@ const FooterStyles = styled.nav`
                 margin-bottom: 0;
                 margin-top: 6.56rem;
         }
+        .social-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+
+                svg {
+                        margin: 0 2rem;
+                }
+                .social-link:hover {
+                        color: var(--cmOrange);
+                }
+        }
+        
+
+        @media screen and (max-width: 700px) {
+                .nav-items-container {
+                        ul {
+                                flex-direction: column;
+                                align-items: center;
+                                padding-le
+                        }
+                }
+
+                .social-container {
+                        flex-direction: column;
+                        align-items: center;
+                }
+        }
 `;
 
-const Footer = ({ showNav, siteTitle, navMenuItems = [] }) => (
+const Footer = ({ showNav, siteTitle, footerNavItems = [] }) => (
         <FooterStyles>
-                {showNav && navMenuItems && (
+                {showNav && footerNavItems && (
                         <div data-sal="fade">
+                                <div className="social-container">
+                                        {footerNavItems.map(
+                                                (i) =>
+                                                        i.kind === 'icon' && (
+                                                                <a className="social-link" href={i.link}>
+                                                                        <Icon icon={i.linkIcon?.iconifyTitle} />
+                                                                </a>
+                                                        )
+                                        )}
+                                </div>
+
                                 <div className="nav-items-container">
                                         <ul>
-                                                {navMenuItems.map((i) => (
-                                                        <li className="text-lg">
-                                                                <CTALink {...i} />
-                                                        </li>
-                                                ))}
+                                                {footerNavItems.map(
+                                                        (i) =>
+                                                                i.kind === 'link' && (
+                                                                        <li className="text-lg">
+                                                                                <CTALink {...i} />
+                                                                        </li>
+                                                                )
+                                                )}
                                         </ul>
                                 </div>
                                 <div className="copywright-container">

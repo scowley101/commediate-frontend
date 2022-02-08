@@ -134,10 +134,10 @@ const Typography = createGlobalStyle`
     /* Chrome renders this weird with this font, so we turn it off */
     text-decoration-skip-ink: none;
     color: inherit;
-    :hover {
+    /* :hover {
       color: var(--cmOrange);
 
-    }
+    } */
   }
 
   .center {

@@ -6,6 +6,9 @@ export const PostInfo = graphql`
                 navMenu {
                         ...NavMenu
                 }
+                footerNav {
+                        ...NavMenu
+                }
                 _rawContent(resolveReferences: { maxDepth: 10 })
                 title
         }

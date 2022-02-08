@@ -13,7 +13,7 @@ const LayoutStyles = styled.div`
 `;
 
 function Layout(props) {
-        const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems } = props;
+        const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems, footerNavItems } = props;
 
         return (
                 <>
@@ -33,7 +33,7 @@ function Layout(props) {
                         />
                         <>{children}</>
                         <Footer
-                                navMenuItems={navMenuItems}
+                                footerNavItems={footerNavItems}
                                 siteTitle={siteTitle}
                                 onHideNav={onHideNav}
                                 onShowNav={onShowNav}

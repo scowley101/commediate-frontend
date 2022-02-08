@@ -134,6 +134,27 @@ padding-right: 0;
         width: 100%;
         background: var(--cmLightOrange);
     }
+
+    .orange-underline-link {
+      position: relative;
+    }
+    .orange-underline-link:hover {
+    color: var(--cmBlue);
+    }
+
+      .orange-underline-link:hover::after {
+    position: absolute;
+        content: '';
+        height: 0.25em;
+        bottom: 3px; 
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: var(--cmLightOrange);
+    }
+    
+
     .white {
         background-color: var(--cmWhite);
     }
