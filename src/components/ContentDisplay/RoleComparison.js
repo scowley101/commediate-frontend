@@ -60,10 +60,27 @@ const RoleComparisonStyles = styled.div`
 
         .capabilities-container,
         .application-container {
+                position: relative;
                 p {
                         margin-top: 0;
                         margin-bottom: 0.25rem;
                 }
+                ul {
+                        margin: 0;
+                }
+        }
+        .box-title-cap {
+                position: absolute;
+                rotate: 270deg;
+                left: -4.5rem;
+                top: 3rem;
+        }
+        .box-title-app {
+                position: absolute;
+                rotate: 270deg;
+                left: -8rem;
+                top: 6.5rem;
+                color: var(--cmOrange);
         }
 
         .capabilities-container {
@@ -153,6 +170,13 @@ const RoleComparisonStyles = styled.div`
                 .application-container {
                         margin-bottom: 3rem;
                 }
+                .box-title-cap,
+                .box-title-app {
+                        position: static;
+                        rotate: 0deg;
+                        left: 0;
+                        top: 0;
+                }
         }
 `;
 
@@ -181,9 +205,13 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
                                                                 <p>{role.tagline}</p>
                                                         </div>
                                                         <div className={`capabilities-container v${i}`}>
-                                                                <h7 className="text-base-bold">
-                                                                        {role.capabilitiesTitle}
-                                                                </h7>
+                                                                {i === 0 ? (
+                                                                        <h7 className="box-title-cap text-base-bold">
+                                                                                {role.capabilitiesTitle}
+                                                                        </h7>
+                                                                ) : (
+                                                                        ''
+                                                                )}
                                                                 <PortableText blocks={role.capabilitiesText} />
                                                         </div>
                                                         <div className={`icon-container v${i}`}>
@@ -193,9 +221,13 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
                                                                 />
                                                         </div>
                                                         <div className={`application-container v${i}`}>
-                                                                <h7 className="text-base-bold">
-                                                                        {role.applicationTitle}
-                                                                </h7>
+                                                                {i === 0 ? (
+                                                                        <h7 className="box-title-app text-base-bold">
+                                                                                {role.applicationTitle}
+                                                                        </h7>
+                                                                ) : (
+                                                                        ''
+                                                                )}
                                                                 <PortableText blocks={role.applicationText} />
                                                         </div>
                                                 </>
