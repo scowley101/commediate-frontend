@@ -14,7 +14,7 @@ const RoleComparisonStyles = styled.div`
                 p,
                 button {
                         margin-top: 0;
-                        margin-bottom: 2rem;
+                        margin-bottom: 4rem;
                 }
         }
         .grid-container {
