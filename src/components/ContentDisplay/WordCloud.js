@@ -46,7 +46,7 @@ const WordCloudStyles = styled.div`
                         right: 52%;
                 }
                 .word-two {
-                        top: 55%;
+                        top: 59%;
                         right: 72%;
                 }
                 .word-three {
@@ -95,19 +95,18 @@ function WordCloud({ backgroundColorRadio, heading, tagline, words }) {
                         </div>
 
                         <div className="cloud-container">
-                                <span className="orange-undrline-container">
-                                        <p className="title h5 orange-underline-text">COMMediate</p>
-                                </span>
-                                <p className="word word-one text-sm bold">Cooperation</p>
-                                <p className="word word-two text-xs bold">Comprehension</p>
-                                <p className="word word-three text-xs bold">Communication</p>
-                                <p className="word word-four text-sm">Resolution</p>
+                                <p className="title h3">COMMediate</p>
+
+                                <p className="word word-one text-lg bold">Cooperate</p>
+                                <p className="word word-two text-xs bold">Comprehend</p>
+                                <p className="word word-three text-xl bold">Communicate</p>
+                                <p className="word word-four text-sm">Resolve</p>
                                 <p className="word word-five text-sm">Deal</p>
                                 <p className="word word-six text-sm bold">Commercial</p>
-                                <p className="word word-seven text-sm">Dispute</p>
-                                <p className="word word-eight text-xs bold">Collaboration</p>
-                                <p className="word word-nine text-sm">Deliver</p>
-                                <p className="word word-ten text-sm">Clarity</p>
+                                <p className="word word-seven text-sm">Mediate</p>
+                                <p className="word word-eight text-2xl bold">Collaborate</p>
+                                <p className="word word-nine text-xs">Deliver</p>
+                                <p className="word word-ten text-xs">Clarity</p>
                         </div>
                 </WordCloudStyles>
         );
