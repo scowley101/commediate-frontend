@@ -23,7 +23,7 @@ const TwoColumnListStyles = styled.div`
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: flex-end;
+                justify-content: center;
                 .heading,
                 .tagline {
                         margin-top: 0;
