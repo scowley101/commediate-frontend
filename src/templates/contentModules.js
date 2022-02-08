@@ -59,8 +59,8 @@ const ContentModules = ({ c }) => {
                 case 'flowLists':
                         return <FlowList key={c._key} {...c} />;
 
-                // case 'iconPlug':
-                //         return <IconPlug key={c._key} {...c} />;
+                case 'iconPlug':
+                        return <IconPlug key={c._key} {...c} />;
 
                 default:
                         return null;

@@ -83,12 +83,12 @@ function WordCloud({ backgroundColorRadio, heading, image, tagline, words }) {
                                 <PortableText blocks={heading} />
                                 <PortableText className="tagline" blocks={tagline} />
                         </div>
-                        <div className="cloud-spacer">
+                        {/* <div className="cloud-spacer">
                                 <div className="cloud-container">
                                         <ReactWordcloud options={options} words={data} />
                                 </div>
-                        </div>
-                        {/* <div className="image-container">{img}</div> */}
+                        </div> */}
+                        <div className="image-container">{img}</div>
                 </WordCloudStyles>
         );
 }

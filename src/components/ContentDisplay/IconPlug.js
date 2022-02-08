@@ -3,21 +3,41 @@ import { Icon } from '@iconify/react';
 import styled from 'styled-components';
 
 const IconStyles = styled.div`
-        padding: var(--componentPadding);
-
+        height: fit-content;
         position: relative;
-        /* bottom: -46rem;
-        left: -2rem; */
-        .icon-container {
+
+        .top-half,
+        .bottom-half {
+                height: 5.493rem;
+                .grey {
+                        background-color: var(--cmGrey);
+                }
+                .white {
+                        background-color: var(--vmWhite);
+                }
+        }
+
+        .iconify {
+                color: var(--cmOrange);
                 position: absolute;
-                bottom: 6rem;
+                bottom: -1.6rem;
+        }
+        .left {
+                padding-left: var(--bodySidePadding);
+                left: -1.25rem;
+        }
+        .right {
+                padding-right: var(--bodySidePadding);
+                right: -1.25rem;
         }
 `;
 
-function IconPlug({ icon: { iconifyTitle } }) {
+function IconPlug({ icon: { iconifyTitle }, position, backgroundColorAbove, backgroundColorBelow }) {
         return (
                 <IconStyles className="icon-container">
-                        <Icon icon={iconifyTitle} height="14rem" />
+                        <div className={`top-half ${backgroundColorAbove.backgroundColor}`} />
+                        <div className={`bottom-half ${backgroundColorBelow.backgroundColor}`} />
+                        <Icon className={position} icon={iconifyTitle} height="14rem" />
                 </IconStyles>
         );
 }
