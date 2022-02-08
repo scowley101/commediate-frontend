@@ -67,7 +67,7 @@ const Typography = createGlobalStyle`
   }
 
   h6,
-  .h6 {
+  .h6 > * {
     /* font-size: 1.5rem;
     line-height: 2rem; */
     font-size: 1.125rem;
@@ -75,55 +75,55 @@ const Typography = createGlobalStyle`
   }
   
   h7,
-  .h7 {
+  .h7 > * {
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .text-base {
+  .text-base > * {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
   }
 
-  .text-base-bold {
+  .text-base-bold > * {
     font-weight: 700;
     font-size: 1rem;
     line-height: 1.5rem;
   }
 
-  .text-lg {
+  .text-lg > * {
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .text-xl {
+  .text-xl > * {
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
-  .text-2xl {
+  .text-2xl > * {
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 2rem;
   }
 
-  .text-sm {
+  .text-sm > * {
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 
-  .text-xs {
+  .text-xs > * {
     font-weight: 400;
     font-size: 0.754rem;
     line-height: 1rem;
   }
 
-  .bold {
+  .bold > * {
     font-weight: 700;
   }
   

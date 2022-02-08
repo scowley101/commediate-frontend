@@ -7,44 +7,53 @@ import CTALink from '../CTALink';
 const TwoColumnListStyles = styled.div`
         padding: var(--componentPadding);
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: center;
 
-        .intro-container {
-                .heading > * {
-                        margin-top: 0;
-                        margin-bottom: 0;
-                }
-                .tagline > * {
-                        margin-bottom: 0;
-                        margin-top: 2.25rem;
-                }
+        .grey {
+                background-color: var(--cmGrey);
+        }
+        .white {
+                background-color: var(--cmWhite);
         }
 
-        .list-container {
+        .left-container,
+        .right-container {
+                width: 50%;
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 100%;
-
-                margin: 0;
-                list-style-type: none;
-                padding: 0;
-                li {
-                        margin-top: 2rem;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                .heading,
+                .tagline {
+                        margin-top: 0;
                         margin-bottom: 0;
-                        width: 25vw;
                         p {
                                 margin: 0;
                         }
                 }
         }
-        button {
-                margin-top: 2.25rem;
+        .left-container {
+                margin-right: 1rem;
+        }
+        .right-container {
+                margin-left: 1rem;
+        }
+        ul {
+                margin: 0;
+                padding-left: 0;
+                li:nth-child(1) {
+                        margin: 0;
+                }
+                li {
+                        margin-top: 1.25rem;
+                }
+                p {
+                        margin: 0;
+                }
         }
 
-        /* .iconful-li {
+        .iconful-li {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -65,7 +74,7 @@ const TwoColumnListStyles = styled.div`
                 p {
                         margin-left: 4em;
                 }
-        } */
+        }
 `;
 
 function TwoColumnList({ backgroundColorRadio, heading, cta, listItems, tagline }) {
@@ -73,18 +82,36 @@ function TwoColumnList({ backgroundColorRadio, heading, cta, listItems, tagline 
 
         return (
                 <TwoColumnListStyles className={backGround}>
-                        <div className="intro-container" data-sal="fade">
+                        <div className="left-container">
                                 {heading ? <PortableText className="heading" blocks={heading} /> : ''}
-                                {tagline ? <PortableText className="tagline" blocks={tagline} /> : ''}
+                                {tagline ? <PortableText className="tagline text-2xl" blocks={tagline} /> : ''}
+                                {cta ? <CTALink {...cta} /> : ''}
                         </div>
-                        <ul className="list-container">
-                                {listItems.map((item, i) => (
-                                        <li data-sal="fade" data-sal-delay={i * 60}>
-                                                <PortableText blocks={item.text} />
-                                        </li>
-                                ))}
+                        <ul className="right-container">
+                                {listItems.map((item, i) => {
+                                        const icon = item?.listIcon?.icon?.iconifyTitle;
+
+                                        return (
+                                                <li
+                                                        className={icon ? 'iconful-li' : 'iconless-li'}
+                                                        data-sal="fade"
+                                                        data-sal-delay={i * 100}
+                                                >
+                                                        {icon ? (
+                                                                <Icon
+                                                                        icon={icon}
+                                                                        // vAlign="middle"
+                                                                        width="2em"
+                                                                        className="icon"
+                                                                />
+                                                        ) : (
+                                                                ''
+                                                        )}
+                                                        <PortableText blocks={item.text} />
+                                                </li>
+                                        );
+                                })}
                         </ul>
-                        {cta ? <CTALink {...cta} /> : ''}
                 </TwoColumnListStyles>
         );
 }
