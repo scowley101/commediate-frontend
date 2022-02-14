@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import { Link } from 'gatsby';
 import React from 'react';
-import { buildImageObj, cn, getBlogUrl } from '../lib/helpers';
+import { buildImageObj, cn, getBlogUrl } from '../utils/helpers';
 import { imageUrlFor } from '../lib/image-url';
 import PortableText from './PortableText';
 // import * as styles from './blog-post-preview.module.css';
