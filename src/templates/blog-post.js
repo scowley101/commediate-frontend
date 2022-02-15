@@ -9,6 +9,12 @@ import { toPlainText } from '../utils/helpers';
 
 export const query = graphql`
         query BlogPostTemplateQuery($id: String!) {
+                nav: sanityNavigationMenu(title: { eq: "Desktop Navigation" }) {
+                        ...NavMenu
+                }
+                footer: sanityNavigationMenu(title: { eq: "Footer" }) {
+                        ...NavMenu
+                }
                 post: sanityPost(id: { eq: $id }) {
                         id
                         publishedAt
@@ -60,8 +66,12 @@ export const query = graphql`
 const BlogPostTemplate = (props) => {
         const { data, errors } = props;
         const post = data && data.post;
+        const { nav, footer } = data || {};
+        const menuItems = nav.items || [];
+        const footerItems = footer.items || [];
+
         return (
-                <Layout textWhite>
+                <Layout navMenuItems={menuItems} footerNavItems={footerItems} textWhite>
                         {errors && <SEO title="GraphQL Error" />}
                         {post && (
                                 <SEO

@@ -4,13 +4,18 @@ import styled from 'styled-components';
 import BlogPostPreview from './blog-post-preview';
 
 const BlogPostPreviewListStyles = styled.div`
-        padding-left: var(--bodySidePadding);
+        /* padding-left: var(--bodySidePadding);
         padding-right: var(--bodySidePadding);
         margin-top: 3.5rem;
-        margin-bottom: var(--verticalPadding);
+        margin-bottom: var(--verticalPadding); */
+        padding: var(--componentPadding);
+
+        h2 {
+                margin: 0;
+        }
 
         .grid {
-                margin: 0;
+                margin-top: 4rem;
                 padding: 0;
                 list-style: none;
                 display: grid;
@@ -39,7 +44,7 @@ const BlogPostPreviewListStyles = styled.div`
 function BlogPostPreviewGrid(props) {
         return (
                 <BlogPostPreviewListStyles>
-                        {props.title && <h2 className="headline h3">{props.title}</h2>}
+                        <h2 className="headline">Insight</h2>
                         <ul className="grid">
                                 {props.nodes &&
                                         props.nodes.map((node) => (

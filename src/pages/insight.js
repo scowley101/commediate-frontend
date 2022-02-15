@@ -12,6 +12,12 @@ export const query = graphql`
                 site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
                         title
                 }
+                nav: sanityNavigationMenu(title: { eq: "Desktop Navigation" }) {
+                        ...NavMenu
+                }
+                footer: sanityNavigationMenu(title: { eq: "Footer" }) {
+                        ...NavMenu
+                }
                 posts: allSanityPost(
                         limit: 6
                         sort: { fields: [publishedAt], order: DESC }
@@ -47,7 +53,8 @@ const IndexPage = (props) => {
                 );
         }
 
-        const { site } = data || {};
+        const { site, nav, footer } = data || {};
+
         const postNodes = (data || {}).posts
                 ? mapEdgesToNodes(data.posts)
                           .filter(filterOutDocsWithoutSlugs)
@@ -60,8 +67,11 @@ const IndexPage = (props) => {
                 );
         }
 
+        const menuItems = nav.items || [];
+        const footerItems = footer.items || [];
+
         return (
-                <Layout textWhite={false}>
+                <Layout navMenuItems={menuItems} footerNavItems={footerItems} textWhite={false}>
                         {/* <SEO
                                 title={site.title || 'Missing title'}
                                 description={site.description || 'Missing description'}

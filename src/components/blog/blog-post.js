@@ -29,6 +29,9 @@ const BlogPostStyles = styled.article`
 
         .grid {
                 padding: var(--componentPadding);
+                h1 {
+                        margin-top: 0;
+                }
                 @media (min-width: 675px) {
                         display: grid;
                         grid-template-columns: 1fr;
@@ -53,7 +56,7 @@ const BlogPostStyles = styled.article`
                 & h4,
                 & h5,
                 & h6 {
-                        margin: 0.75em 0 0.5em 0;
+                        margin: 0;
                 }
                 p {
                         padding-top: 0.5em;
@@ -80,7 +83,7 @@ const BlogPostStyles = styled.article`
         }
 
         .publishedAt {
-                margin: 2rem 0 3rem;
+                margin: 1rem 0 3rem;
                 color: var(--cmDarkGrey);
         }
 
@@ -139,7 +142,7 @@ function BlogPost(props) {
                                                                         : format(new Date(publishedAt), 'do MMMM yyyy')}
                                                         </div>
                                                 )}
-                                                {authors && <AuthorList items={authors} title="Authors" />}
+                                                {authors && <AuthorList items={authors} title="Author" />}
                                                 {categories && (
                                                         <div className="categories">
                                                                 <h3 className="categoriesHeadline h5">Categories</h3>

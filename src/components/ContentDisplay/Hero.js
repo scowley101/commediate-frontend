@@ -69,10 +69,10 @@ const HeroStyles = styled.div`
                 width: 45vw;
                 h4 {
                         margin-top: 0;
-                        margin-bottom: 0;
+                        margin-bottom: 1.625rem;
                 }
                 h2 {
-                        margin-top: 1.625rem;
+                        margin-top: 0;
                         margin-bottom: 0;
                 }
         }
