@@ -63,7 +63,7 @@ const FooterStyles = styled.nav`
 const Footer = ({ showNav, siteTitle, footerNavItems = [] }) => (
         <FooterStyles>
                 {showNav && footerNavItems && (
-                        <div data-sal="fade">
+                        <div>
                                 <div className="social-container">
                                         {footerNavItems.map(
                                                 (i) =>
