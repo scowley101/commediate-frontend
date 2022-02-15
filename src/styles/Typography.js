@@ -27,13 +27,15 @@ const Typography = createGlobalStyle`
   }
 
   h1,
-  .h1 {
+  .h1,
+  .h1  > * {
     font-size: 1.875rem;
     line-height: 2.25rem;
   }
 
   h2,
-  .h2 {
+  .h2,
+  .h2 > * {
     /* font-size: 3.75rem;
     line-height: 3.75rem; */
     font-size: 3rem;
@@ -41,7 +43,8 @@ const Typography = createGlobalStyle`
   }
 
   h3,
-  .h3 {
+  .h3,
+  .h3 > * {
     /* font-size: 3rem;
     line-height: 3rem; */
     font-size: 2.25rem;
@@ -50,7 +53,8 @@ const Typography = createGlobalStyle`
   }
 
   h4,
-  .h4 {
+  .h4,
+  .h4 > * {
     /* font-size: 2.25rem;
     line-height: 2.5rem; */
     font-size: 1.875rem;
@@ -58,7 +62,8 @@ const Typography = createGlobalStyle`
   }
 
   h5,
-  .h5 {
+  .h5,
+  .h5 > * {
     /* font-size: 1.875rem;
     line-height: 2.25rem; */
     font-size: 1.5rem;
@@ -67,7 +72,8 @@ const Typography = createGlobalStyle`
   }
 
   h6,
-  .h6 > * {
+  .h6 > *,
+  .h6 {
     /* font-size: 1.5rem;
     line-height: 2rem; */
     font-size: 1.125rem;
@@ -117,7 +123,8 @@ const Typography = createGlobalStyle`
     line-height: 2rem;
   }
 
-  .text-sm > * {
+  .text-sm > *,
+  .text-sm {
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.25rem;

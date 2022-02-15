@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root {
     --cmGrey: #F0F1F5;
+    --cmDarkGrey: #697A90;
     --cmBlue: #1F3151;
     --cmOrange: #FC9E4F;
     --cmLightOrange: rgba(252, 158, 79, 0.5);
