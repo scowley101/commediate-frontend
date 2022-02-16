@@ -8,7 +8,7 @@ const IconStyles = styled.div`
 
         .top-half,
         .bottom-half {
-                height: 5.493rem;
+                height: 4rem;
                 .grey {
                         background-color: var(--cmGrey);
                 }
@@ -20,7 +20,7 @@ const IconStyles = styled.div`
         .iconify {
                 color: var(--cmOrange);
                 position: absolute;
-                bottom: -1.6rem;
+                bottom: -3rem;
         }
         .left {
                 padding-left: var(--bodySidePadding);

@@ -11,7 +11,7 @@ const HeroStyles = styled.div`
         .background-container {
                 z-index: -1;
                 position: absolute;
-                height: 40rem;
+                height: 33rem;
                 width: 100vw;
                 .grey-container {
                         .grey {
@@ -21,12 +21,11 @@ const HeroStyles = styled.div`
                                 background-color: var(--cmWhite);
                         }
 
-                        height: 75%;
+                        height: 78%;
                         z-index: 50;
                 }
                 .bottom-whitespace {
-                        height: 5.5rem;
-                        height: 25%;
+                        height: 22%;
                 }
         }
 
@@ -83,7 +82,7 @@ const HeroStyles = styled.div`
                 justify-content: center;
                 width: 45vw;
                 .gatsby-image-wrapper {
-                        width: 30vw;
+                        width: 34vw;
                 }
         }
 

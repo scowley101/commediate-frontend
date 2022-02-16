@@ -5,7 +5,6 @@ import Headroom from 'react-headroom';
 import CTALink from './CTALink';
 // import NavIcon from './NavIcon';
 import NavMobile from './NavMobile';
-import { useScrollPosition } from '../utils/getScrollPosition';
 import NavIcon from './NavIcon';
 
 const NavStyles = styled.div`
@@ -60,7 +59,7 @@ const NavStyles = styled.div`
         }
 `;
 
-const Nav = ({ scroll, showNav, siteTitle, navMenuItems = [] }) => (
+const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
         <Headroom>
                 <NavStyles>
                         <div className="site-tite-container">

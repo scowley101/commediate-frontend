@@ -17,7 +17,7 @@ const doNavigate = (target) => {
 
 export const ButtonStyles = styled.button`
         font-family: var(--dmSans);
-        margin-top: 3.875rem;
+        margin-top: 3.2rem;
         border-radius: 56px;
         cursor: pointer;
         /* transition: background-color 0.1s ease, color 0.1s ease; */

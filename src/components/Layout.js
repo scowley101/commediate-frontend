@@ -14,7 +14,7 @@ const LayoutStyles = styled.div`
 `;
 
 function Layout(props) {
-        const { scroll, children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems, footerNavItems } = props;
+        const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems, footerNavItems } = props;
 
         return (
                 <>
@@ -24,7 +24,7 @@ function Layout(props) {
                                 onHideNav={onHideNav}
                                 onShowNav={onShowNav}
                                 showNav={showNav}
-                                scroll={scroll}
+                                
                         />
                         <NavMobile
                                 navMenuItems={navMenuItems}
