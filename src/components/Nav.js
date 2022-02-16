@@ -36,6 +36,20 @@ const NavStyles = styled.div`
                 }
         }
 
+        [aria-current]:not([aria-current='false']) {
+                ::after {
+                        position: absolute;
+                        content: '';
+                        height: 0.25em;
+                        bottom: 3px;
+                        margin: 0 auto;
+                        left: 0;
+                        right: 0;
+                        width: 100%;
+                        background: var(--cmLightOrange);
+                }
+        }
+
         @media screen and (max-width: 900px) {
                 .nav-items-container {
                         display: none;
