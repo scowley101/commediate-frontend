@@ -1,6 +1,7 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
+import { useScrollPosition } from '../utils/getScrollPosition';
 
 const query = graphql`
         query SiteLayoutQuery {
@@ -24,6 +25,11 @@ function LayoutContainer(props) {
         function handleHideNav() {
                 setShowNav(false);
         }
+        const [scroll, setScroll] = useState(0);
+
+        useScrollPosition(function setScrollPosition({ currentPosition }) {
+                setScroll(currentPosition.y);
+        });
 
         return (
                 <StaticQuery
@@ -41,6 +47,7 @@ function LayoutContainer(props) {
                                 return (
                                         <Layout
                                                 {...props}
+                                                scroll={scroll}
                                                 navMenuItems={menuItems}
                                                 footerNavItems={footerItems}
                                                 showNav={showNav}

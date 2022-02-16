@@ -5,7 +5,7 @@ import { SiteContext } from './context/SiteContext';
 
 const NavIconStyles = styled.button`
         position: fixed;
-        top: 1.5rem;
+        top: 1.75rem;
         right: 2rem;
         display: flex;
         flex-direction: column;

@@ -4,6 +4,7 @@ import Footer from './Footer';
 import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
 import Nav from './Nav';
+
 import NavMobile from './NavMobile';
 
 const LayoutStyles = styled.div`
@@ -13,7 +14,7 @@ const LayoutStyles = styled.div`
 `;
 
 function Layout(props) {
-        const { children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems, footerNavItems } = props;
+        const { scroll, children, onHideNav, onShowNav, showNav, siteTitle, navMenuItems, footerNavItems } = props;
 
         return (
                 <>
@@ -23,6 +24,7 @@ function Layout(props) {
                                 onHideNav={onHideNav}
                                 onShowNav={onShowNav}
                                 showNav={showNav}
+                                scroll={scroll}
                         />
                         <NavMobile
                                 navMenuItems={navMenuItems}

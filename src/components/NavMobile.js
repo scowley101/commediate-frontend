@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Headroom from 'react-headroom';
 import CTALink from './CTALink';
 import { SiteContext } from './context/SiteContext';
 import NavIcon from './NavIcon';
