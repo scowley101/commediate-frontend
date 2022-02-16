@@ -41,12 +41,12 @@ function TwoColumnText({ backgroundColorRadio, cta, heading, tagline }) {
 
         return (
                 <TwoColumnTextStyles className={backGround}>
-                        <div className="left-container" data-sal="fade">
+                        <div className="left-container">
                                 <PortableText blocks={heading} />
 
                                 <CTALink {...cta} />
                         </div>
-                        <div className="right-container" data-sal="fade">
+                        <div className="right-container">
                                 <PortableText blocks={tagline} />
                         </div>
                 </TwoColumnTextStyles>

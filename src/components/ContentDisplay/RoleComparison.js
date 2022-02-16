@@ -185,7 +185,7 @@ function RoleComparison({ backgroundColorRadio, heading, tagline, jobRoles, cta 
 
         return (
                 <RoleComparisonStyles className={backGround}>
-                        <div className="intro-container" data-sal="fade">
+                        <div className="intro-container">
                                 <PortableText blocks={heading} />
                                 <PortableText blocks={tagline} />
                         </div>

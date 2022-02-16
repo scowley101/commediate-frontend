@@ -23,7 +23,7 @@ function OneColumnText({ backgroundColorRadio, cta, heading, tagline }) {
 
         return (
                 <OneColumnTextStyles className={backGround}>
-                        <div data-sal="fade">
+                        <div>
                                 <PortableText className="heading" blocks={heading} />
 
                                 <PortableText className="tagline" blocks={tagline} />

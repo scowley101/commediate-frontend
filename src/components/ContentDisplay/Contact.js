@@ -33,11 +33,11 @@ function Contact({ backgroundColorRadio, heading, tagline, isForm }) {
 
         return (
                 <ContactStyles className={backGround}>
-                        <div className="text-container" data-sal="fade">
+                        <div className="text-container">
                                 <PortableText className="heading" blocks={heading} />
                                 <PortableText className="tagline" blocks={tagline} />
                         </div>
-                        <div className="form-container" data-sal="fade">
+                        <div className="form-container">
                                 <ContactForm />
                         </div>
                 </ContactStyles>

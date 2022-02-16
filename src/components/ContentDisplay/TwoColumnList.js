@@ -92,11 +92,7 @@ function TwoColumnList({ backgroundColorRadio, heading, cta, listItems, tagline 
                                         const icon = item?.listIcon?.icon?.iconifyTitle;
 
                                         return (
-                                                <li
-                                                        className={icon ? 'iconful-li' : 'iconless-li'}
-                                                        data-sal="fade"
-                                                        data-sal-delay={i * 100}
-                                                >
+                                                <li className={icon ? 'iconful-li' : 'iconless-li'}>
                                                         {icon ? (
                                                                 <Icon
                                                                         icon={icon}

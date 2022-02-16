@@ -58,12 +58,12 @@ const Page = (props) => {
         //         to: (site.secondaryColor && site.secondaryColor.hex) || '#daae51',
         // };
 
-        const menuItems = page.navMenu && (page.navMenu.items || []);
-        const footerItems = page.footerNav && (page.footerNav.items || []);
+        // const menuItems = page.navMenu && (page.navMenu.items || []);
+        // const footerItems = page.footerNav && (page.footerNav.items || []);
         const pageTitle = data.route && !data.route.useSiteTitle && page.title;
 
         return (
-                <Layout navMenuItems={menuItems} footerNavItems={footerItems}>
+                <Layout /* navMenuItems={menuItems} footerNavItems={footerItems} */>
                         <SEO
                                 title={pageTitle}
                                 description={site.description}

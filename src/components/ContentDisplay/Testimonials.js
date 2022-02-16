@@ -37,10 +37,10 @@ function Testimonials({ backgroundColorRadio, heading, clientTestimonials }) {
         return (
                 <TestimonialsStyles className={backGround}>
                         <div>
-                                <PortableText data-sal="fade" blocks={heading} />
+                                <PortableText blocks={heading} />
                                 <div className="testimonial-container">
                                         {clientTestimonials.map((testimonial, i) => (
-                                                <div className="individual" data-sal="fade" data-sal-delay={i * 100}>
+                                                <div className="individual">
                                                         <PortableText blocks={testimonial.quote} />
                                                         <p className="text-base-bold customer">
                                                                 <span className="orange-underline-container">

@@ -56,17 +56,13 @@ function OneColumnList({ backgroundColorRadio, heading, cta, listItems, tagline 
 
         return (
                 <OneColumnListStyles className={backGround}>
-                        {heading ? <PortableText blocks={heading} data-sal="fade" /> : ''}
-                        {tagline ? <PortableText blocks={tagline} data-sal="fade" /> : ''}
+                        {heading ? <PortableText blocks={heading} /> : ''}
+                        {tagline ? <PortableText blocks={tagline} /> : ''}
                         <ul>
                                 {listItems.map((item, i) => {
                                         const icon = item?.listIcon?.icon?.iconifyTitle;
                                         return (
-                                                <li
-                                                        className={icon ? 'iconful-li' : 'iconless-li'}
-                                                        data-sal="fade"
-                                                        data-sal-delay={i * 60}
-                                                >
+                                                <li className={icon ? 'iconful-li' : 'iconless-li'}>
                                                         {icon ? (
                                                                 <Icon
                                                                         icon={icon}
@@ -83,11 +79,7 @@ function OneColumnList({ backgroundColorRadio, heading, cta, listItems, tagline 
                                 })}
                         </ul>
                         {cta ? (
-                                <div
-                                        className="cta-container"
-                                        data-sal="fade"
-                                        data-sal-delay={(listItems.length + 1) * 100}
-                                >
+                                <div className="cta-container">
                                         <CTALink {...cta} />
                                 </div>
                         ) : (
