@@ -9,25 +9,53 @@ import NavIcon from './NavIcon';
 
 const NavStyles = styled.div`
         /* position: -webkit-sticky; Safari */
-        background-color: var(--cmGrey);
+        /* background-color: var(--cmGrey);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 1rem var(--sidePadding);
-        z-index: 100;
+        z-index: 100; */
 
-        :hover {
-                opacity: 100%;
+        .headroom {
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                background-color: var(--cmGrey);
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem var(--sidePadding);
+        }
+        .headroom--unfixed {
+                position: relative;
+                transform: translateY(0);
+        }
+        .headroom--scrolled {
+                transition: transform 200ms ease-in-out;
+        }
+        .headroom--unpinned {
+                position: fixed;
+                transform: translateY(-100%);
+        }
+        .headroom--pinned {
+                position: fixed;
+                transform: translateY(0%);
         }
 
         .nav-items-container {
                 ul {
+                        height: 28px;
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-end;
+                        margin: 0;
                 }
                 li {
+                        height: 28px;
+
                         display: flex;
                         margin: 0 1.5rem;
                 }
@@ -59,31 +87,40 @@ const NavStyles = styled.div`
         }
 `;
 
-const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
-        <Headroom>
-                <NavStyles>
-                        <div className="site-tite-container">
-                                <span className="orange-underline-link">
-                                        <Link className="site-tite" to="/">
-                                                {siteTitle}
-                                        </Link>
-                                </span>
-                        </div>
+const SpacerStyles = styled.div`
+        position: absolute;
+        height: 19px;
+        background-color: red;
+`;
 
-                        {showNav && navMenuItems && (
-                                <div className="nav-items-container">
-                                        <ul>
-                                                {navMenuItems.map((i) => (
-                                                        <li className="text-lg">
-                                                                <CTALink {...i} />
-                                                        </li>
-                                                ))}
-                                        </ul>
+const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
+        <>
+                <NavStyles>
+                        <Headroom disableInlineStyles>
+                                <div className="site-tite-container">
+                                        <span className="orange-underline-link">
+                                                <Link className="site-tite" to="/">
+                                                        {siteTitle}
+                                                </Link>
+                                        </span>
                                 </div>
-                        )}
-                        <NavIcon />
+
+                                {showNav && navMenuItems && (
+                                        <div className="nav-items-container">
+                                                <ul>
+                                                        {navMenuItems.map((i) => (
+                                                                <li className="text-lg">
+                                                                        <CTALink {...i} />
+                                                                </li>
+                                                        ))}
+                                                </ul>
+                                        </div>
+                                )}
+                                <NavIcon />
+                        </Headroom>
                 </NavStyles>
-        </Headroom>
+                <SpacerStyles />
+        </>
 );
 
 export default Nav;

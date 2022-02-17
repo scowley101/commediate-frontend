@@ -31,21 +31,22 @@ const HeroStyles = styled.div`
 
         .imageful-container,
         .imageless-container {
-                padding-left: var(--bodySidePadding);
-                padding-right: var(--bodySidePadding);
+                padding: var(--componentPadding);
+                /* padding-left: var(--bodySidePadding);
+                padding-right: var(--bodySidePadding); */
                 z-index: 1;
         }
-        .solo-header {
+        /* .solo-header {
                 padding-top: var(--verticalPadding);
                 padding-bottom: 0;
         }
         .full-header {
                 padding-top: var(--verticalPadding);
                 padding-bottom: var(--verticalPadding);
-        }
+        } */
 
         .imageful-container {
-                padding: var(--verticalPadding) var(--bodySidePadding);
+                /* padding: var(--verticalPadding) var(--bodySidePadding); */
                 /* grid-template-columns: 1fr 1fr;
                 grid-gap: 2rem;
                 position: absolute; */
