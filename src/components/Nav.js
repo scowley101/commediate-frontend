@@ -7,17 +7,17 @@ import CTALink from './CTALink';
 import NavMobile from './NavMobile';
 import NavIcon from './NavIcon';
 
-const NavStyles = styled.div`
-        /* position: -webkit-sticky; Safari */
-        /* background-color: var(--cmGrey);
+const NavStyles = styled.nav`
+        position: -webkit-sticky;
+        background-color: var(--cmGrey);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 1rem var(--sidePadding);
-        z-index: 100; */
+        z-index: 100;
 
-        .headroom {
+        /* .headroom {
                 top: 0;
                 left: 0;
                 right: 0;
@@ -43,7 +43,7 @@ const NavStyles = styled.div`
         .headroom--pinned {
                 position: fixed;
                 transform: translateY(0%);
-        }
+        } */
 
         .nav-items-container {
                 ul {
@@ -66,7 +66,7 @@ const NavStyles = styled.div`
                         position: absolute;
                         content: '';
                         height: 0.25em;
-                        bottom: 3px;
+                        top: 1em;
                         margin: 0 auto;
                         left: 0;
                         right: 0;
@@ -94,33 +94,30 @@ const SpacerStyles = styled.div`
 `;
 
 const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
-        <>
+        <Headroom>
                 <NavStyles>
-                        <Headroom disableInlineStyles>
-                                <div className="site-tite-container">
-                                        <span className="orange-underline-link">
-                                                <Link className="site-tite" to="/">
-                                                        {siteTitle}
-                                                </Link>
-                                        </span>
-                                </div>
+                        <div className="site-tite-container">
+                                <span className="orange-underline-link">
+                                        <Link className="site-tite" to="/">
+                                                {siteTitle}
+                                        </Link>
+                                </span>
+                        </div>
 
-                                {showNav && navMenuItems && (
-                                        <div className="nav-items-container">
-                                                <ul>
-                                                        {navMenuItems.map((i) => (
-                                                                <li className="text-lg">
-                                                                        <CTALink {...i} />
-                                                                </li>
-                                                        ))}
-                                                </ul>
-                                        </div>
-                                )}
-                                <NavIcon />
-                        </Headroom>
+                        {showNav && navMenuItems && (
+                                <div className="nav-items-container">
+                                        <ul>
+                                                {navMenuItems.map((i) => (
+                                                        <li className="text-base">
+                                                                <CTALink {...i} />
+                                                        </li>
+                                                ))}
+                                        </ul>
+                                </div>
+                        )}
+                        <NavIcon />
                 </NavStyles>
-                <SpacerStyles />
-        </>
+        </Headroom>
 );
 
 export default Nav;

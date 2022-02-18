@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     --bodySidePadding: 10.44rem;
     --doubleSidePadding: 16.438rem;
     --verticalPadding: 5.5rem;
+    --topComponentPadding: 11rem var(--bodySidePadding) var(--verticalPadding) var(--bodySidePadding);
     --componentPadding: var(--verticalPadding) var(--bodySidePadding) ;
    --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   
@@ -128,31 +129,32 @@ padding-right: 0;
     position: absolute;
         content: '';
         height: 0.25em;
-        bottom: 0.06em; 
+        top: 1em; 
         margin: 0 auto;
         left: 0;
         right: 0;
         width: 100%;
-        background: var(--cmLightOrange);
+        background-color: var(--cmLightOrange);
+
     }
 
     .orange-underline-link {
       position: relative;
     }
-    .orange-underline-link:hover {
-    color: var(--cmBlue);
-    }
+
+  
 
       .orange-underline-link:hover::after {
     position: absolute;
         content: '';
         height: 0.25em;
-        bottom: 3px; 
+        top: 1em; 
         margin: 0 auto;
         left: 0;
         right: 0;
         width: 100%;
-        background: var(--cmLightOrange);
+        background-color: var(--cmLightOrange);
+     
     }
     
 
@@ -164,7 +166,9 @@ padding-right: 0;
         background-color: var(--cmGrey);
      }
    
-  
+  /* .top-module {
+    padding: var(--topComponentPadding);
+  } */
 
 `;
 

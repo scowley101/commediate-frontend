@@ -4,10 +4,14 @@ import PortableText from '../PortableText';
 import clientConfig from '../../../client-config';
 
 const WordCloudStyles = styled.div`
-        padding: var(--componentPadding);
         display: flex;
         flex-direction: row;
         height: fit-content;
+        padding: var(--topComponentPadding);
+
+        :not(.top-module) {
+                padding: var(--componentPadding);
+        }
 
         .white {
                 background-color: var(--cmWhite);
@@ -84,11 +88,11 @@ const WordCloudStyles = styled.div`
         }
 `;
 // TODO: Make word cloud words editable via Sanity
-function WordCloud({ backgroundColorRadio, heading, tagline, words }) {
+function WordCloud({ className, backgroundColorRadio, heading, tagline, words }) {
         const backGround = backgroundColorRadio?.backgroundColor;
 
         return (
-                <WordCloudStyles className={backGround}>
+                <WordCloudStyles className={(backGround, className)}>
                         <div className="intro-container">
                                 <PortableText className="heading" blocks={heading} />
                                 <PortableText className="tagline" blocks={tagline} />

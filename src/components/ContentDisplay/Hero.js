@@ -7,6 +7,8 @@ import clientConfig from '../../../client-config';
 import PortableText from '../PortableText';
 import CTALink from '../CTALink';
 
+// TODO: unfuck the padding for the topModule
+
 const HeroStyles = styled.div`
         .background-container {
                 z-index: -1;
@@ -31,10 +33,11 @@ const HeroStyles = styled.div`
 
         .imageful-container,
         .imageless-container {
-                padding: var(--componentPadding);
                 /* padding-left: var(--bodySidePadding);
                 padding-right: var(--bodySidePadding); */
                 z-index: 1;
+
+                padding: var(--topComponentPadding);
         }
         /* .solo-header {
                 padding-top: var(--verticalPadding);
@@ -83,7 +86,7 @@ const HeroStyles = styled.div`
                 justify-content: center;
                 width: 45vw;
                 .gatsby-image-wrapper {
-                        width: 34vw;
+                        width: 35vw;
                 }
         }
 
@@ -148,13 +151,13 @@ const maybeImage = (illustration) => {
         return img;
 };
 
-function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label }) {
+function Hero({ className, backgroundColorRadio, cta, heading, illustration, tagline, label }) {
         const soloHeader = !cta && !illustration && !tagline;
         const img = maybeImage(illustration);
         const backGround = backgroundColorRadio?.backgroundColor;
         console.log(soloHeader);
         return (
-                <HeroStyles>
+                <HeroStyles className={className}>
                         {illustration ? (
                                 <div className="background-container">
                                         <div className={`grey-container ${backGround}`} />
@@ -166,10 +169,10 @@ function Hero({ backgroundColorRadio, cta, heading, illustration, tagline, label
                         <div
                                 className={
                                         !illustration
-                                                ? `imageless-container ${backGround} ${
+                                                ? `imageless-container ${className} ${backGround} ${
                                                           soloHeader ? 'solo-header' : 'full-header'
                                                   }`
-                                                : 'imageful-container'
+                                                : `imageful-container ${className}`
                                 }
                         >
                                 <div className="text-container">

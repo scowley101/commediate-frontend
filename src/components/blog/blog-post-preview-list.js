@@ -8,7 +8,7 @@ const BlogPostPreviewListStyles = styled.div`
         padding-right: var(--bodySidePadding);
         margin-top: 3.5rem;
         margin-bottom: var(--verticalPadding); */
-        padding: var(--componentPadding);
+        padding: var(--topComponentPadding);
 
         h2 {
                 margin: 0;

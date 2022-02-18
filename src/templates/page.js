@@ -75,7 +75,7 @@ const Page = (props) => {
                         />
                         {/* <div className="header-spacer" style={{ height: '300px', border: 'solid 1px red' }} /> */}
                         {content.map((c, i) => (
-                                <ContentModules c={c} key={i} />
+                                <ContentModules c={c} rawKey={i} key={i} />
                         ))}
                 </Layout>
         );

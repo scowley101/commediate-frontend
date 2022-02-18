@@ -15,52 +15,61 @@ import WordCloud from '../components/ContentDisplay/WordCloud';
 import FlowList from '../components/ContentDisplay/FlowList';
 import IconPlug from '../components/ContentDisplay/IconPlug';
 
-const ContentModules = ({ c }) => {
+const ContentModules = (props) => {
+        const { rawKey, c } = props;
+        const topModule = rawKey === 0;
         switch (c._type) {
                 case 'hero':
-                        return <Hero key={c._key} {...c} />;
+                        return <Hero className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'cvTimeline':
-                        return <CvTimeline key={c._key} {...c} />;
+                        return (
+                                <CvTimeline
+                                        className={topModule && 'top-module'}
+                                        topModule={topModule}
+                                        key={c._key}
+                                        {...c}
+                                />
+                        );
 
                 case 'illustrations':
-                        return <Illustrations key={c._key} {...c} />;
+                        return <Illustrations className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'oneColumnList':
-                        return <OneColumnList key={c._key} {...c} />;
+                        return <OneColumnList className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'oneColumnText':
-                        return <OneColumnText key={c._key} {...c} />;
+                        return <OneColumnText className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'roleComparison':
-                        return <RoleComparison key={c._key} {...c} />;
+                        return <RoleComparison className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'testimonials':
-                        return <Testimonials key={c._key} {...c} />;
+                        return <Testimonials className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'twoColumnList':
-                        return <TwoColumnList key={c._key} {...c} />;
+                        return <TwoColumnList className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'twoColumnText':
-                        return <TwoColumnText key={c._key} {...c} />;
+                        return <TwoColumnText className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'comparisonLists':
-                        return <ComparisonLists key={c._key} {...c} />;
+                        return <ComparisonLists className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'horizontalBlocks':
-                        return <HorizontalBlocks key={c._key} {...c} />;
+                        return <HorizontalBlocks className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'contactForm':
-                        return <Contact key={c._key} {...c} />;
+                        return <Contact className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'wordCloud':
-                        return <WordCloud key={c._key} {...c} />;
+                        return <WordCloud className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'flowLists':
-                        return <FlowList key={c._key} {...c} />;
+                        return <FlowList className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 case 'iconPlug':
-                        return <IconPlug key={c._key} {...c} />;
+                        return <IconPlug className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 default:
                         return null;
