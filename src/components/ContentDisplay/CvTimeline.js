@@ -41,12 +41,14 @@ const CvTimelineStyles = styled.div`
 `;
 
 const contentStyle = { background: 'var(--cmWhite)', color: 'var(--cmBlue)', fontWeight: '400' };
+const rootStyle = { margin: '2em 0' };
 
 function Job({ job: { company, companySubtitle, jobRoleList, roleSummaryList, years } }) {
         return (
                 <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={contentStyle}
+                        style={rootStyle}
                         date={years}
                         dateClassName="date"
                         iconStyle={{

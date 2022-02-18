@@ -75,6 +75,17 @@ const TwoColumnListStyles = styled.div`
                         margin-left: 4em;
                 }
         }
+
+        @media screen and (max-width: 800px) {
+                flex-direction: column;
+                .left-container,
+                .right-container {
+                        width: 100%;
+                }
+                .right-container {
+                        margin-top: 2rem;
+                }
+        }
 `;
 
 function TwoColumnList({ backgroundColorRadio, heading, cta, listItems, tagline }) {

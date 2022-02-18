@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import { SiteContext } from './context/SiteContext';
 
 const NavIconStyles = styled.button`
-        position: fixed;
+        position: absolute;
         top: 1.75rem;
         right: 2rem;
         display: flex;

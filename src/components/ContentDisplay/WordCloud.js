@@ -86,6 +86,23 @@ const WordCloudStyles = styled.div`
                         right: 55%;
                 }
         }
+        @media screen and (max-width: 800px) {
+                flex-direction: column;
+                .intro-container,
+                .cloud-container {
+                        width: 100%;
+                }
+                .cloud-container {
+                        position: relative;
+                        right: 2rem;
+                }
+        }
+
+        @media screen and (max-width: 500px) {
+                .cloud-container {
+                        display: none;
+                }
+        }
 `;
 // TODO: Make word cloud words editable via Sanity
 function WordCloud({ className, backgroundColorRadio, heading, tagline, words }) {
