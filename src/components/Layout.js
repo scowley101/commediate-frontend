@@ -24,15 +24,14 @@ function Layout(props) {
                                 onHideNav={onHideNav}
                                 onShowNav={onShowNav}
                                 showNav={showNav}
-                                
                         />
-                        <NavMobile
+                        {/* <NavMobile
                                 navMenuItems={navMenuItems}
                                 siteTitle={siteTitle}
                                 onHideNav={onHideNav}
                                 onShowNav={onShowNav}
                                 showNav={showNav}
-                        />
+                        /> */}
                         <>{children}</>
                         <Footer
                                 footerNavItems={footerNavItems}

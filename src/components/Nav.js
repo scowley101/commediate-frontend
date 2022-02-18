@@ -115,8 +115,9 @@ const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
                                         </ul>
                                 </div>
                         )}
-                        <NavIcon />
                 </NavStyles>
+                <NavIcon />
+                <NavMobile navMenuItems={navMenuItems} siteTitle={siteTitle} showNav={showNav} />
         </Headroom>
 );
 
