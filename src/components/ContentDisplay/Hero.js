@@ -13,7 +13,7 @@ const HeroStyles = styled.div`
         .background-container {
                 z-index: -1;
                 position: absolute;
-                height: 33rem;
+                height: 36rem;
                 width: 100vw;
                 .grey-container {
                         .grey {
@@ -23,11 +23,11 @@ const HeroStyles = styled.div`
                                 background-color: var(--cmWhite);
                         }
 
-                        height: 78%;
+                        height: 84%;
                         z-index: 50;
                 }
                 .bottom-whitespace {
-                        height: 22%;
+                        height: 16%;
                 }
         }
 
