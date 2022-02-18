@@ -133,6 +133,14 @@ const HeroStyles = styled.div`
                         font-size: 2.25rem;
                         line-height: 2.5rem;
                 }
+                .image-container {
+                        margin-top: 4rem;
+                        width: 100%;
+
+                        .gatsby-image-wrapper {
+                                width: 80%;
+                        }
+                }
         }
 `;
 
