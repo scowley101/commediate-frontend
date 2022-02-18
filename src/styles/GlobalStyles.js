@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     --bodySidePadding: 10.44rem;
     --doubleSidePadding: 16.438rem;
     --verticalPadding: 5.5rem;
-    --topComponentPadding: 11rem var(--bodySidePadding) var(--verticalPadding) var(--bodySidePadding);
+    --topComponentPadding: 8rem var(--bodySidePadding) var(--verticalPadding) var(--bodySidePadding);
     --componentPadding: var(--verticalPadding) var(--bodySidePadding) ;
    --dmSans: DM Sans, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   

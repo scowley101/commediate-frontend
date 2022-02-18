@@ -63,13 +63,15 @@ const HeroStyles = styled.div`
                         width: 100%;
                 }
         }
-
         .text-container {
+                padding-top: 0;
+                margin-top: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
                 width: 45vw;
+                height: fit-content;
                 h4 {
                         margin-top: 0;
                         margin-bottom: 1.625rem;
