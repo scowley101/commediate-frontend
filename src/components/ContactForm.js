@@ -1,6 +1,6 @@
 // Render Prop
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, getIn } from 'formik';
 import styled from 'styled-components';
 import { ButtonStyles } from './CTALink';
 
@@ -33,9 +33,28 @@ const ContactFormStyles = styled.div`
         button {
                 margin-top: 1.75rem;
         }
+
+        .error {
+                color: red;
+        }
 `;
 
 const ContactForm = () => {
+        function getFieldStyles(errors, fieldName) {
+                if (getIn(errors, fieldName)) {
+                        return {
+                                border: '1px solid red',
+                        };
+                }
+        }
+        function getTitleStyles(errors, fieldName) {
+                if (getIn(errors, fieldName)) {
+                        return {
+                                color: 'red',
+                        };
+                }
+        }
+
         const encode = (data) =>
                 Object.keys(data)
                         .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -64,46 +83,79 @@ const ContactForm = () => {
                                                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                                                 body: encode({ 'form-name': 'contact', ...values }),
                                         })
-                                                .then(() => {
-                                                        alert('Success');
-                                                        actions.resetForm();
-                                                })
+                                                .then(
+                                                        () => {
+                                                                alert('Success');
+                                                                actions.resetForm();
+                                                        }
+
+                                                        // (
+                                                        //         // alert('Success');
+                                                        //         <div className="submit-success">
+                                                        //                 <h6>Enquiry successfully Submitted</h6>
+                                                        //                 <p>We will be in touch soon.</p>
+
+                                                        //                 <button type="button" onClick={actions.resetForm()}>
+                                                        //                         Reset form
+                                                        //                 </button>
+                                                        //         </div>
+                                                        // )
+                                                )
                                                 .catch(() => {
                                                         alert('Error');
                                                 })
                                                 .finally(() => actions.setSubmitting(false));
                                 }}
                         >
-                                {({ isSubmitting }) => (
+                                {({ isSubmitting, errors }) => (
                                         <Form name="contact" data-netlify>
                                                 <label htmlFor="fullName">
-                                                        <h7>Full Name</h7>
-                                                </label>
-                                                <Field id="fullName" name="fullName" placeholder="Your full name" />
-                                                <ErrorMessage name="fullName" component="div" />
-
-                                                <label htmlFor="email">
-                                                        <h7>Email</h7>
+                                                        <h7 style={getTitleStyles(errors, 'fullName')}>Full Name</h7>
                                                 </label>
                                                 <Field
+                                                        style={getFieldStyles(errors, 'fullName')}
+                                                        id="fullName"
+                                                        name="fullName"
+                                                        placeholder="Your full name"
+                                                />
+                                                <ErrorMessage
+                                                        className="full-name-error error text-sm"
+                                                        name="fullName"
+                                                        component="div"
+                                                />
+
+                                                <label htmlFor="email">
+                                                        <h7 style={getTitleStyles(errors, 'email')}>Email</h7>
+                                                </label>
+                                                <Field
+                                                        style={getFieldStyles(errors, 'email')}
                                                         id="email"
                                                         name="email"
                                                         placeholder="jane@acme.com"
                                                         type="email"
                                                 />
-                                                <ErrorMessage name="email" component="div" />
+                                                <ErrorMessage
+                                                        className="email-error error text-sm"
+                                                        name="email"
+                                                        component="div"
+                                                />
 
                                                 <label htmlFor="message">
-                                                        <h7>Message</h7>
+                                                        <h7 style={getTitleStyles(errors, 'message')}>Message</h7>
                                                 </label>
                                                 <Field
+                                                        style={getFieldStyles(errors, 'message')}
                                                         id="message"
                                                         component="textarea"
                                                         name="message"
                                                         placeholder="Your enquiry here"
                                                         type="message"
                                                 />
-                                                <ErrorMessage name="message" component="div" />
+                                                <ErrorMessage
+                                                        className="message-error error text-sm"
+                                                        name="message"
+                                                        component="div"
+                                                />
 
                                                 <ButtonStyles type="submit" disabled={isSubmitting}>
                                                         Submit
