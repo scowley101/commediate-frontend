@@ -52,12 +52,21 @@ const NavStyles = styled.nav`
                         flex-direction: row;
                         justify-content: flex-end;
                         margin: 0;
+                        li:nth-child(1) {
+                                margin-left: 0;
+                                margin-right: 1.5rem;
+                        }
+                        li:not(:first-child):not(:last-child) {
+                                margin: 0 1.5rem;
+                        }
+
+                        li:last-child {
+                                margin-left: 1.5rem;
+                                margin-right: 0;
+                        }
                 }
                 li {
-                        height: 28px;
-
                         display: flex;
-                        margin: 0 1.5rem;
                 }
         }
 
