@@ -141,6 +141,11 @@ const Typography = createGlobalStyle`
   .bold {
     font-weight: 700;
   }
+
+  .site-title {
+    font-size: 2rem;
+    font-weight: 400;
+  }
   
   a {
 

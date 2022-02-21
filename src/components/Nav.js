@@ -106,11 +106,13 @@ const Nav = ({ showNav, siteTitle, navMenuItems = [] }) => (
         <Headroom>
                 <NavStyles>
                         <div className="site-tite-container">
-                                <span className="orange-underline-link">
-                                        <Link className="site-tite" to="/">
-                                                {siteTitle}
-                                        </Link>
-                                </span>
+                                <h1 className="site-title">
+                                        <span className="orange-underline-link">
+                                                <Link className="site-tite orange-underline-link" to="/">
+                                                        {siteTitle}
+                                                </Link>
+                                        </span>
+                                </h1>
                         </div>
 
                         {showNav && navMenuItems && (
