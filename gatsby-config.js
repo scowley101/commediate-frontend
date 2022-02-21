@@ -67,11 +67,6 @@ module.exports = {
 
                 {
                         resolve: 'gatsby-plugin-sanity-image',
-                        options: {
-                                // Sanity project info (required)
-                                projectId: process.env.GATSBY_SANITY_PROJECT_ID,
-                                dataset: process.env.GATSBY_SANITY_DATASET,
-                        },
                 },
         ],
 };
