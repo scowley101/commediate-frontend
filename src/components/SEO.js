@@ -36,7 +36,19 @@ import { buildImageObj } from '../lib/helpers';
 
 // https://ogp.me
 
-function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradient }) {
+const detailsQuery = graphql`
+        query DefaultSEOQuery {
+                site: sanitySiteSettings(_id: { eq: "a8caf443-4574-4a9c-9ea4-77ae32882718" }) {
+                        title
+                        openGraph {
+                                title
+                                description
+                        }
+                }
+        }
+`;
+
+function SEO({ description, lang, meta, keywords, title, image, bodyAttr }) {
         return (
                 <StaticQuery
                         query={detailsQuery}
@@ -58,10 +70,6 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
                                                         pageTitle === siteTitle ? siteTitle : `%s | ${siteTitle}`
                                                 }
                                                 meta={[
-                                                        {
-                                                                name: 'robots',
-                                                                content: 'noindex',
-                                                        },
                                                         {
                                                                 name: 'google-site-verification',
                                                                 content: '7MfJFsxBVui5UlEBExUFeMW9-Q6g9fPgoaxwzvbqaV0',
@@ -113,13 +121,13 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr, gradie
                                                         )
                                                         .concat(meta)}
                                         >
-                                                {gradient && gradient.from && gradient.to && (
+                                                {/* {gradient && gradient.from && gradient.to && (
                                                         <style type="text/css">{`
               .gradient {
                 background: linear-gradient(90deg, ${gradient.from} 0%, ${gradient.to} 100%);
               }
             `}</style>
-                                                )}
+                                                )} */}
                                         </Helmet>
                                 );
                         }}
@@ -142,15 +150,3 @@ SEO.propTypes = {
 };
 
 export default SEO;
-
-const detailsQuery = graphql`
-        query DefaultSEOQuery {
-                site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-                        title
-                        openGraph {
-                                title
-                                description
-                        }
-                }
-        }
-`;

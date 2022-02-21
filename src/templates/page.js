@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import GraphQLErrorList from '../components/graphql-error-list';
 import Layout from '../containers/layout';
 import SEO from '../components/SEO';
-
 import ContentModules from './contentModules';
 
 export const query = graphql`
@@ -40,7 +39,6 @@ const Page = (props) => {
                         </Layout>
                 );
         }
-
         const { site } = data || {};
 
         if (!site) {
@@ -53,15 +51,9 @@ const Page = (props) => {
 
         const content = (page._rawContent || []).filter((c) => !c.disabled);
 
-        // const gradient = {
-        //         from: (site.primaryColor && site.primaryColor.hex) || '#d53369',
-        //         to: (site.secondaryColor && site.secondaryColor.hex) || '#daae51',
-        // };
-
-        // const menuItems = page.navMenu && (page.navMenu.items || []);
-        // const footerItems = page.footerNav && (page.footerNav.items || []);
         const pageTitle = data.route && !data.route.useSiteTitle && page.title;
-
+        const frontpageTitle = !pageTitle && page.title;
+        console.log(frontpageTitle);
         return (
                 <Layout /* navMenuItems={menuItems} footerNavItems={footerItems} */>
                         <SEO
@@ -71,9 +63,7 @@ const Page = (props) => {
                                 bodyAttr={{
                                         class: 'leading-normal tracking-normal text-white gradient',
                                 }}
-                                // gradient={gradient}
                         />
-                        {/* <div className="header-spacer" style={{ height: '300px', border: 'solid 1px red' }} /> */}
                         {content.map((c, i) => (
                                 <ContentModules c={c} rawKey={i} key={i} />
                         ))}

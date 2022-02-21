@@ -7,10 +7,40 @@ import GraphQLErrorList from '../components/graphql-error-list';
 import SEO from '../components/SEO';
 import Layout from '../containers/layout';
 
+// export const InsightPageQuery = graphql`
+//         query InsightPageQuery {
+//                 page: sanityPage(id: { eq: "-926b7f62-3d20-5cc6-bfce-1185afc9c8e7" }) {
+//                         ...PageInfo
+//                 }
+
+//                 site: sanitySiteSettings(id: { eq: "-db64c44d-3d29-5b9a-a3da-e69f38ea7181" }) {
+//                         title
+//                         openGraph {
+//                                 title
+//                                 description
+//                                 image {
+//                                         ...SanityImage
+//                                 }
+//                         }
+//                 }
+//         }
+// `;
+
 export const query = graphql`
         query IndexPageQuery {
-                site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+                page: sanityPage(id: { eq: "-926b7f62-3d20-5cc6-bfce-1185afc9c8e7" }) {
+                        ...PageInfo
+                }
+
+                site: sanitySiteSettings(id: { eq: "-db64c44d-3d29-5b9a-a3da-e69f38ea7181" }) {
                         title
+                        openGraph {
+                                title
+                                description
+                                image {
+                                        ...SanityImage
+                                }
+                        }
                 }
                 nav: sanityNavigationMenu(title: { eq: "Desktop Navigation" }) {
                         ...NavMenu
@@ -42,7 +72,7 @@ export const query = graphql`
         }
 `;
 
-const IndexPage = (props) => {
+const InsightPage = (props) => {
         const { data, errors } = props;
 
         if (errors) {
@@ -52,8 +82,8 @@ const IndexPage = (props) => {
                         </Layout>
                 );
         }
-
-        const { site, nav, footer } = data || {};
+        console.log(data);
+        const { site, nav, footer, page } = data || {};
 
         const postNodes = (data || {}).posts
                 ? mapEdgesToNodes(data.posts)
@@ -72,11 +102,11 @@ const IndexPage = (props) => {
 
         return (
                 <Layout navMenuItems={menuItems} footerNavItems={footerItems} textWhite={false}>
-                        {/* <SEO
-                                title={site.title || 'Missing title'}
+                        <SEO
+                                title={page.title || 'Missing title'}
                                 description={site.description || 'Missing description'}
                                 keywords={site.keywords || []}
-                        /> */}
+                        />
                         <Container>
                                 {/* <h1 hidden>Welcome to {site.title}</h1> */}
                                 <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
@@ -85,4 +115,4 @@ const IndexPage = (props) => {
         );
 };
 
-export default IndexPage;
+export default InsightPage;

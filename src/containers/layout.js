@@ -24,7 +24,6 @@ function LayoutContainer(props) {
         function handleHideNav() {
                 setShowNav(false);
         }
-        
 
         return (
                 <StaticQuery
@@ -42,7 +41,6 @@ function LayoutContainer(props) {
                                 return (
                                         <Layout
                                                 {...props}
-                                               
                                                 navMenuItems={menuItems}
                                                 footerNavItems={footerItems}
                                                 showNav={showNav}

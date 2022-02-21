@@ -165,7 +165,6 @@ function Hero({ className, backgroundColorRadio, cta, heading, illustration, tag
         const soloHeader = !cta && !illustration && !tagline;
         const img = maybeImage(illustration);
         const backGround = backgroundColorRadio?.backgroundColor;
-        console.log(soloHeader);
         return (
                 <HeroStyles className={className}>
                         {illustration ? (

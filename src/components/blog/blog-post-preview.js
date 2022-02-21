@@ -65,7 +65,6 @@ const BlogPostPreviewStyles = styled.div`
 `;
 
 function BlogPostPreview(props) {
-        console.log(props.publishedAt);
         return (
                 <BlogPostPreviewStyles>
                         <Link className="list" to={getBlogUrl(props.slug.current)}>
