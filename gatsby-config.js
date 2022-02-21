@@ -7,11 +7,6 @@ const clientConfig = require('./client-config');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-        // siteMetadata: {
-        //         title: '',
-        //         siteUrl: '',
-        //         description: '',
-        // },
         plugins: [
                 {
                         resolve: `gatsby-plugin-scroll-reveal`,
@@ -46,6 +41,17 @@ module.exports = {
                                 display: 'swap',
                         },
                 },
+                {
+                        resolve: `gatsby-plugin-google-analytics`,
+                        options: {
+                                // The property ID; the tracking code won't be generated without it
+                                trackingId: 'G-0EDFZ4TWGX',
+                                // Defines where to place the tracking script - `true` in the head and `false` in the body
+                                head: true,
+                                // Setting this parameter is optional
+                                anonymize: true,
+                        },
+                },
                 'gatsby-plugin-styled-components',
                 'gatsby-plugin-react-helmet',
                 'gatsby-plugin-image',
@@ -56,8 +62,8 @@ module.exports = {
                         resolve: 'gatsby-plugin-sanity-image',
                         options: {
                                 // Sanity project info (required)
-                                projectId: 'mnpavw3y',
-                                dataset: 'production',
+                                projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+                                dataset: process.env.GATSBY_SANITY_DATASET,
                         },
                 },
         ],
