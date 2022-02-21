@@ -52,6 +52,13 @@ module.exports = {
                                 anonymize: true,
                         },
                 },
+                {
+                        resolve: '@sentry/gatsby',
+                        options: {
+                                dsn: 'https://c26704a04e0c4f87a5ff91ae7423d83e@o1149408.ingest.sentry.io/6221532',
+                                sampleRate: 0.7,
+                        },
+                },
                 'gatsby-plugin-styled-components',
                 'gatsby-plugin-react-helmet',
                 'gatsby-plugin-image',
