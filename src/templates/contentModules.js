@@ -14,6 +14,7 @@ import Contact from '../components/ContentDisplay/Contact';
 import WordCloud from '../components/ContentDisplay/WordCloud';
 import FlowList from '../components/ContentDisplay/FlowList';
 import IconPlug from '../components/ContentDisplay/IconPlug';
+import CodeInjection from '../components/ContentDisplay/CodeInjection';
 
 const ContentModules = (props) => {
         const { rawKey, c } = props;
@@ -70,6 +71,9 @@ const ContentModules = (props) => {
 
                 case 'iconPlug':
                         return <IconPlug className={topModule && 'top-module'} key={c._key} {...c} />;
+
+                case 'codeInject':
+                        return <CodeInjection className={topModule && 'top-module'} key={c._key} {...c} />;
 
                 default:
                         return null;

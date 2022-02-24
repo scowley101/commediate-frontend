@@ -53,7 +53,6 @@ const Page = (props) => {
 
         const pageTitle = data.route && !data.route.useSiteTitle && page.title;
         const frontpageTitle = !pageTitle && page.title;
-        console.log(frontpageTitle);
         return (
                 <Layout /* navMenuItems={menuItems} footerNavItems={footerItems} */>
                         <SEO

@@ -82,7 +82,6 @@ const InsightPage = (props) => {
                         </Layout>
                 );
         }
-        console.log(data);
         const { site, nav, footer, page } = data || {};
 
         const postNodes = (data || {}).posts

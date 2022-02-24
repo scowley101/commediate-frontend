@@ -53,7 +53,6 @@ function SEO({ description, lang, meta, keywords, title, image, bodyAttr }) {
                 <StaticQuery
                         query={detailsQuery}
                         render={(data) => {
-                                console.log(data);
                                 const metaDescription =
                                         description || (data.site && data.site.openGraph.description) || '';
                                 const siteTitle = (data.site && data.site.title) || '';

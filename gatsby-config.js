@@ -92,25 +92,52 @@ module.exports = {
                 //                 // },
                 //         },
                 // },
+                // {
+                //         resolve: `gatsby-plugin-cookiehub`,
+                //         options: {
+                //                 // your cookiehub widget ID
+                //                 cookihubId: `5ab2c99b`,
+                //                 // your google analytics tracking id
+                //                 trackingId: `G-0EDFZ4TWGX`,
+                //                 // Puts tracking script in the head instead of the body
+                //                 // head: false,
+                //                 // enable ip anonymization
+                //                 // anonymize: true,
+                //         },
+                // },
                 {
-                        resolve: `gatsby-plugin-cookiehub`,
+                        resolve: `gatsby-plugin-gdpr-cookies`,
                         options: {
-                                // your cookiehub widget ID
-                                cookihubId: `5ab2c99b`,
-                                // your google analytics tracking id
-                                trackingId: `G-0EDFZ4TWGX`,
-                                // Puts tracking script in the head instead of the body
-                                // head: false,
-                                // enable ip anonymization
-                                // anonymize: true,
+                                googleAnalytics: {
+                                        trackingId: 'G-0EDFZ4TWGX', // leave empty if you want to disable the tracker
+                                        cookieName: 'gatsby-gdpr-google-analytics', // default
+                                        anonymize: true, // default
+                                        allowAdFeatures: false, // default
+                                },
+                                // googleTagManager: {
+                                //         trackingId: 'YOUR_GOOGLE_TAG_MANAGER_TRACKING_ID', // leave empty if you want to disable the tracker
+                                //         cookieName: 'gatsby-gdpr-google-tagmanager', // default
+                                //         dataLayerName: 'dataLayer', // default
+                                // },
+                                // facebookPixel: {
+                                //         pixelId: 'YOUR_FACEBOOK_PIXEL_ID', // leave empty if you want to disable the tracker
+                                //         cookieName: 'gatsby-gdpr-facebook-pixel', // default
+                                // },
+                                // tikTokPixel: {
+                                //         pixelId: 'YOUR_TIKTOK_PIXEL_ID', // leave empty if you want to disable the tracker
+                                //         cookieName: 'gatsby-gdpr-tiktok-pixel', // default
+                                // },
+                                // hotjar: {
+                                //         hjid: 'YOUR_HOTJAR_ID',
+                                //         hjsv: 'YOUR_HOTJAR_SNIPPET_VERSION',
+                                //         cookieName: 'gatsby-gdpr-hotjar', // default
+                                // },
+                                // defines the environments where the tracking should be available  - default is ["production"]
+                                environments: ['production', 'development'],
                         },
                 },
                 {
                         resolve: '@sentry/gatsby',
-                        options: {
-                                dsn: 'https://c26704a04e0c4f87a5ff91ae7423d83e@o1149408.ingest.sentry.io/6221532',
-                                sampleRate: 0.7,
-                        },
                 },
                 'gatsby-plugin-styled-components',
                 'gatsby-plugin-react-helmet',
