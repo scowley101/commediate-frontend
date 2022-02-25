@@ -34,6 +34,7 @@ const serializers = {
                 authorReference: AuthorReference,
                 mainImage: ({ node }) => <MainImage mainImage={node} />,
                 videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
+                soundcloud: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
                 instagram: ({ node }) => {
                         if (!node.url) return null;
                         return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
