@@ -1,4 +1,4 @@
-import { format, distanceInWords, differenceInDays } from 'date-fns';
+import { format, formatDistance, differenceInDays } from 'date-fns';
 import React from 'react';
 import styled from 'styled-components';
 import { buildImageObj } from '../../utils/helpers';
@@ -135,7 +135,7 @@ function BlogPost(props) {
                                                 {publishedAt && (
                                                         <div className="publishedAt text-base">
                                                                 {differenceInDays(new Date(publishedAt), new Date()) > 3
-                                                                        ? distanceInWords(
+                                                                        ? formatDistance(
                                                                                   new Date(publishedAt),
                                                                                   new Date()
                                                                           )

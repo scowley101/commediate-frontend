@@ -15,6 +15,9 @@ module.exports = {
         plugins: [
                 {
                         resolve: 'gatsby-plugin-sitemap',
+                        options: {
+                                excludes: ['/frontpage/'],
+                        },
                 },
                 {
                         resolve: `gatsby-plugin-scroll-reveal`,
