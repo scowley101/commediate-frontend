@@ -6,8 +6,16 @@ const clientConfig = require('./client-config');
 
 const isProd = process.env.NODE_ENV === 'production';
 
+const siteUrl = `https://www.commediate.co.uk`;
+
 module.exports = {
+        siteMetadata: {
+                siteUrl,
+        },
         plugins: [
+                {
+                        resolve: 'gatsby-plugin-sitemap',
+                },
                 {
                         resolve: `gatsby-plugin-scroll-reveal`,
                         options: {
