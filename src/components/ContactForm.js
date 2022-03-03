@@ -9,6 +9,7 @@ const ContactFormStyles = styled.div`
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+                justify-content: center;                
                 position: relative;
                 bottom: 1rem;
         }

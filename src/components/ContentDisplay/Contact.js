@@ -25,6 +25,9 @@ const ContactStyles = styled.div`
 
         .form-container {
                 margin-left: 1rem;
+                /* display: flex;
+                flex-direction: column;
+                align-items: center; */
         }
         @media screen and (max-width: 800px) {
                 flex-direction: column;
@@ -35,8 +38,11 @@ const ContactStyles = styled.div`
                 }
                 .form-container {
                         margin-top: 2rem;
+                        margin-left: 0;
                 }
         }
+
+       
 `;
 
 function Contact({ backgroundColorRadio, heading, tagline, isForm }) {
