@@ -116,7 +116,6 @@ const ContactForm = () => {
                                                         style={getFieldStyles(errors, 'fullName')}
                                                         id="fullName"
                                                         name="fullName"
-                                                        placeholder="Your full name"
                                                 />
                                                 <ErrorMessage
                                                         className="full-name-error error text-sm"
@@ -131,7 +130,6 @@ const ContactForm = () => {
                                                         style={getFieldStyles(errors, 'email')}
                                                         id="email"
                                                         name="email"
-                                                        placeholder="jane@acme.com"
                                                         type="email"
                                                 />
                                                 <ErrorMessage
@@ -148,7 +146,6 @@ const ContactForm = () => {
                                                         id="message"
                                                         component="textarea"
                                                         name="message"
-                                                        placeholder="Your enquiry here"
                                                         type="message"
                                                 />
                                                 <ErrorMessage

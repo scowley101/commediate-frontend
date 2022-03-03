@@ -12,10 +12,10 @@ const NavMobileStyles = styled.div`
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
         .nav-container {
-                overflow-x: hidden;
+                /* overflow-x: hidden;
                 overflow-y: scroll;
-                -webkit-overflow-scrolling: touch;
-                z-index: 100;
+                -webkit-overflow-scrolling: touch; */
+                z-index: 101;
                 height: 100vh;
                 width: 100vw;
                 display: flex;
