@@ -23,12 +23,14 @@ const NavMobileStyles = styled.div`
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                                background-color: var(--cmGrey);
+
                 background: var(--cmGrey);
                 position: absolute;
                 top: 0;
                 right: 0;
                 transition: transform 300ms;
-                transform: ${({ isNavOpen }) => (isNavOpen ? 'translateX(0)' : 'translateX(100%)')};
+                transform: ${({ isNavOpen }) => (isNavOpen ? 'translate3d(0, 0, 0)' : 'translate3d(100%, 0, 0)')};
 
                 ul {
                         list-style-type: none;
