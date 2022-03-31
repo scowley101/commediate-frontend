@@ -32,8 +32,8 @@ const IconStyles = styled.div`
         }
 `;
 
-function IconPlug({ icon, position, backgroundColorAbove, backgroundColorBelow }) {
-        const iconResult = icon?.icon?.icon?.iconifyTitle;
+function IconPlug({ iconRef, icon, position, backgroundColorAbove, backgroundColorBelow }) {
+        const iconResult = iconRef?.icon?.iconifyTitle;
         return (
                 <IconStyles className="icon-container">
                         <div className={`top-half ${backgroundColorAbove.backgroundColor}`} />
