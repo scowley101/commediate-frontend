@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PortableText from '../PortableText';
 import clientConfig from '../../../client-config';
+import CTALink from '../CTALink';
 
 const WordCloudStyles = styled.div`
         display: flex;
@@ -105,7 +106,7 @@ const WordCloudStyles = styled.div`
         }
 `;
 // TODO: Make word cloud words editable via Sanity
-function WordCloud({ className, backgroundColorRadio, heading, tagline, words }) {
+function WordCloud({ className, backgroundColorRadio, heading, tagline, words, cta }) {
         const backGround = backgroundColorRadio?.backgroundColor;
 
         return (
@@ -113,6 +114,7 @@ function WordCloud({ className, backgroundColorRadio, heading, tagline, words })
                         <div className="intro-container">
                                 <PortableText className="heading" blocks={heading} />
                                 <PortableText className="tagline" blocks={tagline} />
+                                <CTALink {...cta} />
                         </div>
 
                         <div className="cloud-container">
