@@ -17,16 +17,20 @@ const doNavigate = (target) => {
 
 export const ButtonStyles = styled.button`
         font-family: var(--dmSans);
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: var(--cmBlue);
+
         margin-top: 3.2rem;
         border-radius: 56px;
         cursor: pointer;
         /* transition: background-color 0.1s ease, color 0.1s ease; */
         transition: all 0.2s;
-        padding: 0.6rem 1.89rem;
+        padding: 1rem 2rem;
         /* a {
                 text-decoration: none;
                 color: white;
-                font-weight: bold;
+                font-weight: 700;
         } */
         background-color: var(--cmOrange);
         border: none;

@@ -148,7 +148,6 @@ const Typography = createGlobalStyle`
   }
   
   a {
-
     text-decoration: none;
     /* text-decoration-color: var(--orange); */
     /* Chrome renders this weird with this font, so we turn it off */

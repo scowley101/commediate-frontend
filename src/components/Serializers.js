@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import InstagramEmbed from 'react-instagram-embed';
+// import InstagramEmbed from 'react-instagram-embed';
 import { Icon } from '@iconify/react';
 import sal from 'sal.js';
 import Figure from './Figure';
@@ -35,10 +35,10 @@ const serializers = {
                 mainImage: ({ node }) => <MainImage mainImage={node} />,
                 videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
                 soundcloud: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
-                instagram: ({ node }) => {
-                        if (!node.url) return null;
-                        return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
-                },
+                // instagram: ({ node }) => {
+                //         if (!node.url) return null;
+                //         return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
+                // },
                 math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
         },
         marks: {
