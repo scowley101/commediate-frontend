@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Slider from 'react-slick';
 import Errors from '../components/errors';
 import Page from '../templates/page';
 
