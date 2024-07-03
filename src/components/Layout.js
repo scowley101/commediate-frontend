@@ -22,6 +22,9 @@ function Layout(props) {
 
         return (
                 <>
+                        <GlobalStyles />
+                        <Typography />
+
                         <Nav
                                 navMenuItems={navMenuItems}
                                 siteTitle={siteTitle}
@@ -95,8 +98,6 @@ function Layout(props) {
                                         We use cookies to collect and analyse information on site performance and usage.
                                 </p>
                         </CookieConsent> */}
-                        <GlobalStyles />
-                        <Typography />
                 </>
         );
 }
