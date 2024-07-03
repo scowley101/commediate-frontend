@@ -36,6 +36,7 @@
     "gatsby-plugin-sanity-image": "^0.13.4",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-plugin-sitemap": "^6.12.3",
+    "gatsby-plugin-styled-components": "^6.13.1",
     "gatsby-source-sanity": "^7.0.7",
     "gatsby-transformer-sharp": "^5.12.3",
     "katex": "^0.15.2",
