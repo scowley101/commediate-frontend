@@ -31,7 +31,6 @@ export const query = graphql`
                 page: sanityPage(id: { eq: "-926b7f62-3d20-5cc6-bfce-1185afc9c8e7" }) {
                         ...PageInfo
                 }
-
                 site: sanitySiteSettings(id: { eq: "-db64c44d-3d29-5b9a-a3da-e69f38ea7181" }) {
                         title
                         openGraph {
@@ -49,7 +48,7 @@ export const query = graphql`
                         ...NavMenu
                 }
                 posts: allSanityPost(
-                        sort: { fields: [publishedAt], order: DESC }
+                        sort: { publishedAt: DESC }
                         filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
                 ) {
                         edges {
