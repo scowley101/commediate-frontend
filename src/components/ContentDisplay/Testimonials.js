@@ -38,23 +38,25 @@ function Testimonials({ backgroundColorRadio, heading, clientTestimonials }) {
                 <TestimonialsStyles className={backGround}>
                         <div>
                                 <PortableText blocks={heading} />
-                                <div className="testimonial-container">
-                                        {clientTestimonials.map((testimonial, i) => (
-                                                <div className="individual">
-                                                        <PortableText blocks={testimonial.quote} />
-                                                        <p className="text-base-bold customer">
-                                                                <span className="orange-underline-container">
-                                                                        <span className="orange-underline-text">
-                                                                                {testimonial.clientName}
-                                                                                {testimonial.clientBusiness
-                                                                                        ? `, ${testimonial.clientBusiness}`
-                                                                                        : ''}
+                                {Array.isArray(clientTestimonials) && clientTestimonials.length > 0 && (
+                                        <div className="testimonial-container">
+                                                {clientTestimonials.map((testimonial, i) => (
+                                                        <div key={i} className="individual">
+                                                                <PortableText blocks={testimonial.quote} />
+                                                                <p className="text-base-bold customer">
+                                                                        <span className="orange-underline-container">
+                                                                                <span className="orange-underline-text">
+                                                                                        {testimonial.clientName}
+                                                                                        {testimonial.clientBusiness
+                                                                                                ? `, ${testimonial.clientBusiness}`
+                                                                                                : ''}
+                                                                                </span>
                                                                         </span>
-                                                                </span>
-                                                        </p>
-                                                </div>
-                                        ))}
-                                </div>
+                                                                </p>
+                                                        </div>
+                                                ))}
+                                        </div>
+                                )}
                         </div>
                 </TestimonialsStyles>
         );
